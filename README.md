@@ -54,15 +54,15 @@ You can shut down using `docker-compose stop` and remove everything using `docke
 
 ## Provided endpoints
 
-This project is build using the [lblod/mu-python-ml-fastapi-template](https://github.com/lblod/mu-python-ml-fastapi-template) and provides an interactive API documentation and exploration web user interface at `http://endpoint:2000/docs#/`. Here, all endpoints are documented and available for testing.
+This project is build using the [lblod/mu-python-ml-fastapi-template](https://github.com/lblod/mu-python-ml-fastapi-template) and provides an interactive API documentation and exploration web user interface at `http://endpoint/docs#/`. Here, all endpoints are documented and available for testing.
 
-Most important endpoints:
+### Most important endpoints:
 
 * **POST /tasks/bpmn:** This endpoint accepts a `.bpmn` file, creates an embedding task, and returns a `task_uuid`. This `task_uuid` can be used to track the status and result of the embedding process.
 
 ```
 curl -X 'POST' \
-  'http://localhost:2000/tasks/bpmn' \
+  'http://endpoint/tasks/bpmn' \
   -H 'accept: application/json' \
   -H 'Content-Type: multipart/form-data' \
   -F 'file=@Sport-Subsidieaanvraag-GrootstGemeneDeler_v0.3.bpmn'
@@ -73,7 +73,7 @@ curl -X 'POST' \
 ```
 
 curl -X 'POST' \
-  'http://localhost:2000/tasks/text' \
+  'http://endpoint/tasks/text' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -86,18 +86,21 @@ curl -X 'POST' \
 
 ```
 curl -X 'GET' \
-  'http://localhost:2000/tasks/b6480a3a-298e-11ef-a785-0242c0a80002' \
+  'http://endpoint/tasks/b6480a3a-298e-11ef-a785-0242c0a80002' \
   -H 'accept: application/json'
 ```
 * **POST /search:** This endpoint encodes a given text into an embedding and performs a dense vector search in Elasticsearch to find semantically similar documents. 
 
 ```
 curl -X 'POST' \
-  'http://localhost:2000/search' \
+  'http://endpoint:2000/search' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '"geef mij een bpmn over rijbewijzen"'
 ```
+
+
+## Deep dive into the architecture
 
 
 ## Overview of services
