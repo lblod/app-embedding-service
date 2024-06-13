@@ -1,0 +1,27 @@
+version: "3.4"
+
+services:
+  identifier:
+    ports:
+      - "80:80"
+      
+  triplestore:
+    ports:
+      - "8890:8890"
+
+  poc-embedder:
+    ports:
+      - "2000:80"
+
+  resource:
+    ports:
+      - "3000:80"
+      
+  search:
+    ports:
+      - "4000:80"
+
+  elasticsearch:
+    ports:
+      - "9200:9200"
+      - "9300:9300"

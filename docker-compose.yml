@@ -1,0 +1,136 @@
+version: '3.4'
+
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+
+services:
+  poc-embedder:
+    image: svercoutere/mu-python-ml:0.1.0
+    environment:
+      MODE: "development"
+      MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
+      MU_SPARQL_UPDATEPOINT: "http://triplestore:8890/sparql"
+      MU_QUEUE_GRAPH: "http://mu.semte.ch/graphs/tasks"
+      SENTENSE_EMBEDDING_MODEL: "paraphrase-multilingual-MiniLM-L12-v2" #use "textgain/tags-allnli-GroNLP-bert-base-dutch-cased" if you want to embed texts in Dutch with BPMNGraphEmbedder instead of BPMNGraphEmbedderKeras and in search config set dims to 768
+      EMBEDDING_MODEL : "/app/models/bpmn_search_0.1.0/bpmn_search_embedding_model.h5" # this graph embedding model is trained with embeddings generate from "paraphrase-multilingual-MiniLM-L12-v2" model. Unexpected results may occur if you use other sentence-transformers.
+    volumes:
+      - ./source:/app/
+
+  identifier:
+    image: semtech/mu-identifier:1.10.1
+    labels:
+      - "logging=true"
+    logging: *default-logging
+    environment:
+      SESSION_COOKIE_SECURE: "on"
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"public"},{"variables":[],"name":"clean"}]'
+    links:
+      - dispatcher:dispatcher
+
+  dispatcher:
+    image: semtech/mu-dispatcher:2.1.0-beta.2
+    volumes:
+      - ./config/dispatcher:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+    links:
+      - resource:resource
+
+  database:
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    image: semtech/mu-authorization:0.6.0-beta.5
+    environment:
+      MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
+    volumes:
+      - ./config/authorization:/config
+    restart: always
+    
+  triplestore:
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    image: redpencil/virtuoso:1.2.0-rc.1
+    environment:
+      SPARQL_UPDATE: "true"
+      DEFAULT_GRAPH: "http://mu.semte.ch/application"
+    volumes:
+      - ./data/db:/data
+      - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini
+    restart: always
+
+  migrations:
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    image: semtech/mu-migrations-service:0.9.0
+    links:
+      - triplestore:database
+    volumes:
+      - ./config/migrations:/data/migrations
+    restart: always
+
+  resource:
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    image: semtech/mu-cl-resources:1.23.0
+    environment:
+      CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
+    links:
+      - database:database
+    volumes:
+      - ./config/resources:/config
+    restart: always
+
+  cache:
+    image: semtech/mu-cache:2.0.2
+    links:
+      - resource:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+
+  deltanotifier:
+    image: semtech/mu-delta-notifier
+    volumes:
+      - ./config/delta:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+
+  ################################################################################
+  # MU SEARCH
+  ################################################################################
+
+  # currently set to reindex after restart
+  search:
+    image: nbittich/mu-search:experimental-dense-vector
+    links:
+       - database:database
+    restart: always
+    labels:
+       - "logging=true"
+    logging: *default-logging
+    volumes:
+      - ./config/search:/config
+
+  elasticsearch:
+     labels:
+       - "logging=true"
+     logging: *default-logging
+     image: semtech/mu-search-elastic-backend:latest
+     volumes:
+       - ./data/elasticsearch/:/usr/share/elasticsearch/data
+     environment:
+       - discovery.type=single-node
+     restart: always

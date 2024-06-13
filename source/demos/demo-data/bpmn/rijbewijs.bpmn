@@ -1,0 +1,1316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="757146a1-3800-42ad-8f2d-3d962f43e537" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <resource id="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" name="Eerste lijn" />
+  <resource id="730ff209-27be-400b-b2ce-9bd0702f1e21" name="Burgerzaken" />
+  <process id="PROCESS_21dbb684-16b5-448b-b395-ea38bee16782" name="Aanvraag_rijbewijs (37)" isExecutable="false">
+    <ioSpecification />
+    <extensionElements>
+      <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+        <EngageTableTypes>
+          <EngageTableType Id="0" Name="Roles">
+            <EngageTableItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b">
+              <EngageProperties />
+            </EngageTableItem>
+            <EngageTableItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21">
+              <EngageProperties />
+            </EngageTableItem>
+          </EngageTableType>
+          <EngageTableType Id="1" Name="Documents">
+            <EngageTableItem Name="KB 23 maart 1998" Guid="634987d4-7e83-4798-ae8f-bd39c550199c">
+              <EngageProperties>
+                <EngageProperty Name="URL" Value="http://www.ejustice.just.fgov.be/" />
+              </EngageProperties>
+            </EngageTableItem>
+            <EngageTableItem Name="Retributiereglement Contantbelasting op afgifte van administratieve stukken (06)" Guid="55cebb60-9bf0-48bf-821b-6dc80c3adf74">
+              <EngageProperties>
+                <EngageProperty Name="URL" Value="https://aalter.sharepoint.com/sites/DS/Documenten DS/06 afgifte administratieve stukken 2020.pdf" />
+              </EngageProperties>
+            </EngageTableItem>
+            <EngageTableItem Name="Voorwaarden" Guid="31536556-568f-49ad-83f6-139cb087c9bc">
+              <EngageProperties>
+                <EngageProperty Name="URL" Value="https://mobilit.belgium.be/nl/wegverkeer/rijbewijzen/voorlopig_rijbewijs_categorie_b_m12" />
+              </EngageProperties>
+            </EngageTableItem>
+            <EngageTableItem Name="wetgeving" Guid="d9ea09de-1e6f-4fd5-804b-de62dbf999e2">
+              <EngageProperties>
+                <EngageProperty Name="URL" Value="www.mobilit.belgium.be/nl" />
+              </EngageProperties>
+            </EngageTableItem>
+            <EngageTableItem Name="Internationaal rijbewijs" Guid="d35363aa-72ee-4e99-a6ad-7357a4e6065d">
+              <EngageProperties>
+                <EngageProperty Name="URL" Value="https://mobilit.belgium.be/nl/wegverkeer/rijbewijzen/belgische_rijbewijzen/internationaal_rijbewijs" />
+              </EngageProperties>
+            </EngageTableItem>
+            <EngageTableItem Name="Wetgeving nationaal rijbewijs" Guid="e1dded69-e4c4-44d4-9784-e3c6cf83e902">
+              <EngageProperties>
+                <EngageProperty Name="URL" Value="https://mobilit.belgium.be/nl/wegverkeer/rijbewijzen/belgische_rijbewijzen/belgisch_nationaal_rijbewijs" />
+              </EngageProperties>
+            </EngageTableItem>
+          </EngageTableType>
+        </EngageTableTypes>
+        <EngageProperties />
+      </EngageExtensions>
+    </extensionElements>
+    <startEvent id="NODE_62f244ca-7378-40e6-9b21-0ceef61b949e" name="Inwoner vraagt aan">
+      <documentation />
+      <outgoing>FLOW62f244ca-7378-40e6-9b21-0ceef61b949e_2c376775-e972-4047-885a-46e57a809d9f</outgoing>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="62f244ca-7378-40e6-9b21-0ceef61b949e" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Arial Narrow&amp;quot;;&quot;&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="Annotation" Value="Geen meting in FOX" />
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </startEvent>
+    <textAnnotation id="ASSOC_62f244ca-7378-40e6-9b21-0ceef61b949e">
+      <text>Geen meting in FOX</text>
+    </textAnnotation>
+    <association Id="ASSOCASSOC_62f244ca-7378-40e6-9b21-0ceef61b949e" sourceRef="NODE_62f244ca-7378-40e6-9b21-0ceef61b949e" targetRef="ASSOC_62f244ca-7378-40e6-9b21-0ceef61b949e" />
+    <userTask id="NODE_2c376775-e972-4047-885a-46e57a809d9f" name="Wetgeving" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>De wetgeving van het Belgisch nationaal rijbewijs kan je terugvinden via toegevoegde link.
+
+De wetgeving van het internationaal rijbewijs kan je terugvinden via de toegevoegde link.</documentation>
+      <incoming>FLOW62f244ca-7378-40e6-9b21-0ceef61b949e_2c376775-e972-4047-885a-46e57a809d9f</incoming>
+      <outgoing>FLOW2c376775-e972-4047-885a-46e57a809d9f_0d1e9914-d0fb-4cae-ba49-c188df5f8972</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="2c376775-e972-4047-885a-46e57a809d9f" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;De wetgeving van het Belgisch nationaal rijbewijs kan je terugvinden via toegevoegde link.&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;De wetgeving van het internationaal rijbewijs kan je terugvinden via de toegevoegde link.&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="Document">
+              <EngageValueItem Name="wetgeving" Guid="d9ea09de-1e6f-4fd5-804b-de62dbf999e2" />
+              <EngageValueItem Name="Wetgeving nationaal rijbewijs" Guid="e1dded69-e4c4-44d4-9784-e3c6cf83e902" />
+              <EngageValueItem Name="Internationaal rijbewijs" Guid="d35363aa-72ee-4e99-a6ad-7357a4e6065d" />
+            </EngageProperty>
+            <EngageProperty Name="TaskType" Value="Internet" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </userTask>
+    <userTask id="NODE_0d1e9914-d0fb-4cae-ba49-c188df5f8972" name="Tijdelijk verval van recht tot sturen" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Geen nieuwe aanvraag RB
+
+Indien een inwoner van Aalter tijdelijk verval tot sturen heeft voor alle categorieën, wordt dit door de politierechtbank aan de hand van een proces-verbaal meegedeeld. 
+ 
+neem de inlichtingenfiche uit het klassement  -&gt; vermelden van alle rijverboden + extra info + bijhouden documenten indien nodig (vb. art. 42 L.O.)
+controleer alle rijverboden bij herstelonderzoeken -&gt; datum van slagen ex noteren + controle van alle gegevens! ( eventueel politierechtbank of correctionele rechtbank)
+plaats op de keerzijde de stempel "verval" 
+vul de noodzakelijke gegevens in 
+stop de inlichtingenfiche terug in het klassement
+klasseer het procesverbaal in de daartoe bestemde classeur (in alfabetische volgorde) 
+ 
+Wel nieuwe aanvraag RB
+
+Indien een inwoner van Aalter tijdelijk verval tot sturen heeft voor bepaalde categorieën of weekendverval, wordt dit door de politierechtbank aan de hand van een proces-verbaal meegedeeld. 
+ 
+vraag het document van de politierechtbank
+controleer het aanvraagformulier zodat dit volledig en correct is ingevuld en ondertekend
+vraag 25 euro aan de burger (gebaseerd op art. 61 retributies van het KB van 23/03/1998 "Rijbewijzen")
+foto uit bestand BELPIC of nieuwe scan ( zie anavraag VRB of RB)
+ 
+ 
+Aandachtpunt:
+Het originele RB werd afgegeven aan de desbetreffende rechtbank
+Dit wordt na volledig herstel terug afgehaald (of bij ons) -&gt; afhankelijk van situatie of afspraak met rechtbank
+bij tijdelijke herstelonderzoeken: zie aanvraag RB (+FOD wetgeving)
+mogelijke herstelonderzoeken: medisch, psychisch, theoretisch, praktisch, art 42 (Medisch ongeschikt).
+ </documentation>
+      <incoming>FLOW2c376775-e972-4047-885a-46e57a809d9f_0d1e9914-d0fb-4cae-ba49-c188df5f8972</incoming>
+      <outgoing>FLOW0d1e9914-d0fb-4cae-ba49-c188df5f8972_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="0d1e9914-d0fb-4cae-ba49-c188df5f8972" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;u style=&quot;&quot;&gt;Geen nieuwe aanvraag RB&lt;/u&gt;&lt;/font&gt;&lt;/font&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13.3333px;&quot;&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/span&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Indien een inwoner van Aalter tijdelijk &lt;u&gt;verval tot sturen&lt;/u&gt; heeft voor &lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;strong&gt;alle &lt;/strong&gt;&lt;/font&gt;categorieën, wordt dit&amp;nbsp;door de politierechtbank aan de hand van een proces-verbaal meegedeeld. &lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul dir=&quot;ltr&quot; style=&quot;&quot;&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;neem de inlichtingenfiche&amp;nbsp;uit het klassement&amp;nbsp; -&amp;gt; vermelden van alle rijverboden + extra info + bijhouden documenten indien nodig (vb. art. 42 L.O.)&lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;controleer alle rijverboden bij herstelonderzoeken -&amp;gt; datum van slagen ex noteren + controle van alle gegevens! ( eventueel politierechtbank of correctionele rechtbank)&lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;plaats op de keerzijde de stempel &quot;verval&quot; &lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;vul de noodzakelijke gegevens in &lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;stop de inlichtingenfiche terug in het klassement&lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;klasseer het procesverbaal in de daartoe bestemde classeur (in&amp;nbsp;alfabetische volgorde) &lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p dir=&quot;ltr&quot; style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;u&gt;Wel nieuwe aanvraag RB&lt;/u&gt;&lt;/font&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/font&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;Indien een inwoner van Aalter&lt;strong&gt; &lt;u&gt;tijdelijk&lt;/u&gt;&lt;/strong&gt;&lt;u&gt; verval tot sturen&lt;/u&gt; heeft voor &lt;strong&gt;bepaalde &lt;/strong&gt;categorieën of weekendverval, wordt dit&amp;nbsp;door de politierechtbank aan de hand van een proces-verbaal meegedeeld.&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul dir=&quot;ltr&quot; style=&quot;&quot;&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;vraag het document van de politierechtbank&lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;controleer het aanvraagformulier zodat&amp;nbsp;dit volledig en correct is ingevuld en ondertekend&lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;vraag&amp;nbsp;25 euro aan de burger (gebaseerd op&amp;nbsp;art. 61 retributies van het KB van 23/03/1998 &quot;Rijbewijzen&quot;)&lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;foto uit bestand BELPIC of nieuwe scan ( zie anavraag VRB of RB)&lt;/font&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;Aandachtpunt:&lt;/font&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;&quot;&gt;Het originele RB werd afgegeven aan de desbetreffende rechtbank&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;&quot;&gt;Dit wordt na volledig herstel terug afgehaald (of bij ons) -&amp;gt; afhankelijk van situatie of afspraak met rechtbank&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;&quot;&gt;bij tijdelijke herstelonderzoeken: zie aanvraag RB (+FOD wetgeving)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;&quot;&gt;mogelijke herstelonderzoeken: medisch, psychisch, theoretisch, praktisch, art 42 (Medisch ongeschikt).&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;&lt;/p&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Brief" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="IsRiskPoint" Value="true" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </userTask>
+    <exclusiveGateway id="NODE_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" name="Welk rijbewijs wordt aangevraagd?" gatewayDirection="Diverging">
+      <documentation>Een inwoner wenst een voorlopig rijbewijs, een rijbewijs, een internationaal rijbewijs en heeft daarvoor de nodige proeven afgelegd en/of de nodige correcte documenten mee of aanvraagdocument wordt ingevuld aan de balie (aanvraag zonder examens).
+ 
+Controleer:
+de identiteit en de leeftijd van betrokkenen (afhankelijk van het aangevraagde rijbewijs).
+aanvraagdocument (ingevuld en ondertekend aan beide zijden waar nodig - bv. lichamelijke ongeschiktheid groep 1).
+foto's al dan niet foto en handtekening/foto uit het bestand van de identiteitskaarten (Belpic), ondertekenen van toestemming foto/handtekening.
+indien foto en/of handtekening niet OK in Belpic moet deze ingescand worden (aanvragen van Titellidnr aan back-office) en dan foto en/of handtekening inscannen.</documentation>
+      <incoming>FLOW0d1e9914-d0fb-4cae-ba49-c188df5f8972_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb</incoming>
+      <outgoing>FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_3c58d451-237e-4855-8ccc-2421b4b198ea</outgoing>
+      <outgoing>FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_1d15bd90-78d3-4b18-a0e9-0b3f5b899917</outgoing>
+      <outgoing>FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_4faae827-0fc3-466d-972b-ebfc5a546b7a</outgoing>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Een inwoner wenst een voorlopig rijbewijs, een rijbewijs, een internationaal rijbewijs en heeft daarvoor de nodige proeven afgelegd en/of de nodige correcte&amp;nbsp;documenten mee of aanvraagdocument wordt ingevuld aan de balie (aanvraag zonder examens).&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Controleer:&lt;/font&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;de identiteit en de leeftijd van betrokkenen (afhankelijk van het aangevraagde rijbewijs).&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;aanvraagdocument (ingevuld en ondertekend aan&amp;nbsp;beide zijden waar nodig - bv. lichamelijke ongeschiktheid groep 1).&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;foto's al dan niet foto en handtekening/foto uit het bestand van de identiteitskaarten (Belpic), ondertekenen van toestemming foto/handtekening.&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;indien foto en/of handtekening niet OK in Belpic moet deze ingescand worden (aanvragen van Titellidnr aan back-office) en dan foto en/of handtekening inscannen.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" />
+            <EngageProperty Name="ChoiceType" Value="Choice" />
+            <EngageProperty Name="Conditions" Value="~|~|~" />
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </exclusiveGateway>
+    <manualTask id="NODE_3c58d451-237e-4855-8ccc-2421b4b198ea" name="Voorlopig rijbewijs" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Aanvraag door geslaagd examen nieuwe categorie of omwisseling naar ander VRB of gewone aanvraag (BE) zonder examens of eventueel andere reden (foto, wijziging of bijvoegen begeleider(s),), verlies, diefstal
+Afhankelijk van de reden van aanvraag het aanvraagdocument of ander model VRB controleren of dit volledig is ingevuld en ondertekend (voor-en achterzijde). Let op voor beperkingen groep 1. Eventueel bijkomende documenten af te geven bij categorie A, B, C1, C, D1 en D
+ 
+aanduiden op aanvraagdocument categorie waarvoor aanvraag wordt gedaan.
+vul het volgdocument aan met de nodige gegevens
+ 
+Prijs: 25 euro
+ 
+Het VRB moet na vervaldatum binnen gebracht worden en betrokkene ontvangt in ruil een stageattest. (B.O.)
+Stageattest + 6 uur rijschool + nog geldig theoretisch examen = nog examen mogelijk
+Anders wachttijd van 3 jaar
+Uitzondering: categorie B = model 12 (zie verder)
+ </documentation>
+      <incoming>FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_3c58d451-237e-4855-8ccc-2421b4b198ea</incoming>
+      <outgoing>FLOW3c58d451-237e-4855-8ccc-2421b4b198ea_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="3c58d451-237e-4855-8ccc-2421b4b198ea" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Aanvraag door geslaagd examen nieuwe categorie of omwisseling naar ander VRB of gewone aanvraag (BE) zonder examens of eventueel andere reden (foto, wijziging of bijvoegen begeleider(s),), verlies, diefstal&lt;/font&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Afhankelijk van de reden van aanvraag het aanvraagdocument of ander model VRB controleren of dit volledig is ingevuld en ondertekend (voor-en achterzijde). Let op voor beperkingen groep 1. Eventueel bijkomende documenten af te geven bij categorie A, B, C1, C, D1 en D&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;aanduiden op aanvraagdocument categorie waarvoor aanvraag wordt gedaan.&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;vul het volgdocument aan met de nodige gegevens&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Prijs: 25 euro&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Het VRB moet na vervaldatum binnen gebracht worden en betrokkene ontvangt in ruil een stageattest. (B.O.)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Stageattest + 6 uur rijschool + nog geldig theoretisch examen = nog examen mogelijk&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Anders wachttijd van 3 jaar&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Uitzondering: categorie B = model 12 (zie verder)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/p&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <exclusiveGateway id="NODE_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" name="Welke categorie?" gatewayDirection="Diverging">
+      <documentation />
+      <incoming>FLOW3c58d451-237e-4855-8ccc-2421b4b198ea_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d</incoming>
+      <outgoing>FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_2df41ce3-574c-4db6-b3e2-d97bf6247152</outgoing>
+      <outgoing>FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_9abc0b53-2693-4c5e-a953-6c2a3005afbe</outgoing>
+      <outgoing>FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_7fde6817-aa90-4bf6-ac4a-b10a2228348e</outgoing>
+      <outgoing>FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_63a5e022-4e89-4772-8935-aee39688ea50</outgoing>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Arial Narrow&amp;quot;;&quot;&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;p&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Arial Narrow&amp;quot;;&quot;&gt;&lt;/font&gt;&lt;font style=&quot;font-family: &amp;quot;Arial Narrow&amp;quot;; font-size: 10pt;&quot;&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;P&gt;&lt;FONT size=2 face=Arial&gt;&amp;nbsp;&lt;/P&gt;&lt;/FONT&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="Document">
+              <EngageValueItem Name="Retributiereglement Contantbelasting op afgifte van administratieve stukken (06)" Guid="55cebb60-9bf0-48bf-821b-6dc80c3adf74" />
+            </EngageProperty>
+            <EngageProperty Name="ChoiceType" Value="Choice" />
+            <EngageProperty Name="Conditions" Value="~|~|~|~" />
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </exclusiveGateway>
+    <manualTask id="NODE_2df41ce3-574c-4db6-b3e2-d97bf6247152" name="Model 12" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>M 12 = met begeleiders categorie B
+ 
+Voorwaarden (zie link):
+wachttijd van 3 jaar
+6 uur rijschool
+nog geldig theoretisch examen
+1 of 2 begeleiders</documentation>
+      <incoming>FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_2df41ce3-574c-4db6-b3e2-d97bf6247152</incoming>
+      <outgoing>FLOW2df41ce3-574c-4db6-b3e2-d97bf6247152_b7248248-2e28-467c-9a57-11d6f1cb4d0f</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="2df41ce3-574c-4db6-b3e2-d97bf6247152" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;strong style=&quot;&quot;&gt;&lt;u style=&quot;&quot;&gt;M 12 = met begeleiders categorie B&lt;/u&gt;&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;strong&gt;&lt;u&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&lt;/u&gt;&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Voorwaarden (zie link):&lt;/font&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;wachttijd van 3 jaar&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;6 uur rijschool&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;nog geldig theoretisch examen&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;1 of 2 begeleiders&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="Document">
+              <EngageValueItem Name="Voorwaarden" Guid="31536556-568f-49ad-83f6-139cb087c9bc" />
+            </EngageProperty>
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_9abc0b53-2693-4c5e-a953-6c2a3005afbe" name="Model 18" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>M 18 = zonder begeleiders 
+moet een getuigschrift van onderricht van erkende rijschool afgegeven worden (20u rijschool hebben gevolgd/18j) 
+bij omwisseling model 18 naar model 36 (of omgekeerd), voorwaarden nagaan of dit nog mogelijk is (FOD Mobiliteit) 
+ </documentation>
+      <incoming>FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_9abc0b53-2693-4c5e-a953-6c2a3005afbe</incoming>
+      <outgoing>FLOW9abc0b53-2693-4c5e-a953-6c2a3005afbe_b7248248-2e28-467c-9a57-11d6f1cb4d0f</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="9abc0b53-2693-4c5e-a953-6c2a3005afbe" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;strong style=&quot;&quot;&gt;&lt;u style=&quot;&quot;&gt;M 18 = zonder begeleiders&lt;/u&gt;&lt;/strong&gt; &lt;/font&gt;&lt;/p&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;moet een getuigschrift van onderricht van erkende rijschool afgegeven worden (20u rijschool hebben gevolgd/18j) &lt;/li&gt;&lt;li&gt;bij omwisseling model 18 naar model 36 (of omgekeerd), voorwaarden nagaan of dit nog mogelijk is (FOD Mobiliteit) &lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_7fde6817-aa90-4bf6-ac4a-b10a2228348e" name="Model 36" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>M 36 = met begeleiders categorie B
+ 
+Aanvraagdocument moet volledig ondertekend zijn door de aanvrager.
+ 
+Begeleiders moeten eveneens aanvraag hebben ingevuld en ondertekend. 
+ 
+Onder voorbehoud dat de begeleider aan de voorwaarden voldoet zal zij/hij mogen optreden als begeleider: 
+Controle door BO: 8 jaar in bezit van rijbewijs cat B, laatste 3 jaar geen rijverbod, geen begeleider van andere kandidaat (behalve eigen kinderen uitzondering). Voorwaarden begeleiders zie onderrichtingen FOD Mobiliteit.
+ </documentation>
+      <incoming>FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_7fde6817-aa90-4bf6-ac4a-b10a2228348e</incoming>
+      <outgoing>FLOW7fde6817-aa90-4bf6-ac4a-b10a2228348e_b7248248-2e28-467c-9a57-11d6f1cb4d0f</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="7fde6817-aa90-4bf6-ac4a-b10a2228348e" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;u style=&quot;&quot;&gt;&lt;strong style=&quot;&quot;&gt;M 36 = met begeleiders categorie B&lt;/strong&gt;&lt;/u&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Aanvraagdocument moet volledig ondertekend zijn door de aanvrager.&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Begeleiders moeten eveneens aanvraag hebben ingevuld en ondertekend. &lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Onder voorbehoud dat de begeleider aan de voorwaarden voldoet zal zij/hij mogen optreden als begeleider: &lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Controle door BO: 8 jaar in bezit van rijbewijs cat B, laatste 3 jaar geen rijverbod, geen begeleider van andere kandidaat (behalve eigen kinderen uitzondering). Voorwaarden begeleiders zie onderrichtingen FOD Mobiliteit.&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_63a5e022-4e89-4772-8935-aee39688ea50" name="Model 3" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>MOD 3 voor A-categorieën voorzien van attest rijschool (te volgen uren volgens categorie) 
+ 
+Aanvraagdocument moet volledig ondertekend zijn door de aanvrager.
+ 
+De begeleiders (1 of 2) moeten ingevuld zijn in het daarvoor voorziene vakje op het aanvraagdocument. Deze zijn verantwoordelijk. Indien blijkt dat zij bij de aanvraag niet voldeden aan de voorwaarden, kan het VRB als nietig worden verklaard.
+ 
+Controle door BO : 6 jaar in bezit van rijbewijs voor die categorie, laatste 3 jaar geen rijverbod, geen begeleider van andere kandidaat (behalve eigen kinderen uitzondering), Voor de voorwaarden begeleider(s) zie onderrichtingen FOD Mobiliteit :
+Categorieën van groep 2 : moet medische schifting gekopieerd worden en aan de fiche van het VRB worden gehecht.
+ 
+ </documentation>
+      <incoming>FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_63a5e022-4e89-4772-8935-aee39688ea50</incoming>
+      <outgoing>FLOW63a5e022-4e89-4772-8935-aee39688ea50_b7248248-2e28-467c-9a57-11d6f1cb4d0f</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="63a5e022-4e89-4772-8935-aee39688ea50" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;strong style=&quot;&quot;&gt;&lt;u style=&quot;&quot;&gt;MOD 3 voor A-categorieën voorzien van attest rijschool (te volgen uren volgens categorie) &lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;strong&gt;&lt;u&gt;&lt;/u&gt;&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;Aanvraagdocument moet volledig ondertekend zijn door de aanvrager.&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;De begeleiders (1 of 2) moeten ingevuld zijn in het daarvoor voorziene vakje op het aanvraagdocument. Deze zijn verantwoordelijk. Indien blijkt dat zij bij de aanvraag niet voldeden aan de voorwaarden, kan het VRB als nietig worden verklaard.&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;Controle door BO : 6 jaar in bezit van rijbewijs voor die categorie, laatste 3 jaar geen rijverbod, geen begeleider van andere kandidaat (behalve eigen kinderen uitzondering), Voor de voorwaarden begeleider(s) zie onderrichtingen FOD Mobiliteit :&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;Categorieën van groep 2 : moet medische schifting gekopieerd worden en aan de fiche van het VRB worden gehecht.&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_b7248248-2e28-467c-9a57-11d6f1cb4d0f" name="Melding aan burger" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Meldt de burger dat hij zal worden verwittigd wanneer het rijbewijs beschikbaar is (via e-mail of telefonisch).Het rijbewijs is aangevraagd.
+</documentation>
+      <incoming>FLOW63a5e022-4e89-4772-8935-aee39688ea50_b7248248-2e28-467c-9a57-11d6f1cb4d0f</incoming>
+      <incoming>FLOW2df41ce3-574c-4db6-b3e2-d97bf6247152_b7248248-2e28-467c-9a57-11d6f1cb4d0f</incoming>
+      <incoming>FLOW9abc0b53-2693-4c5e-a953-6c2a3005afbe_b7248248-2e28-467c-9a57-11d6f1cb4d0f</incoming>
+      <incoming>FLOW7fde6817-aa90-4bf6-ac4a-b10a2228348e_b7248248-2e28-467c-9a57-11d6f1cb4d0f</incoming>
+      <outgoing>FLOWb7248248-2e28-467c-9a57-11d6f1cb4d0f_899421d3-978b-4763-a465-dbde6fb22ecd</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="b7248248-2e28-467c-9a57-11d6f1cb4d0f" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;Meldt de burger dat hij zal worden verwittigd wanneer het rijbewijs beschikbaar is (via e-mail of telefonisch).&lt;/font&gt;&lt;span style=&quot;font-size: 13.3333px;&quot;&gt;Het rijbewijs is aangevraagd.&lt;/span&gt;&lt;br&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <exclusiveGateway id="NODE_899421d3-978b-4763-a465-dbde6fb22ecd" name="Aanvraag voorlopig rijbewijs" gatewayDirection="Diverging">
+      <documentation>controleer of de volledige aanvraag (en aanvraagdocument) correct is
+scan foto indien nog niet gebeurd
+controleer of betrokkene voldoet aan de leeftijdsvoorwaarden en zijn de nodige documenten bijgevoegd (rijschool? Groep 1?)
+controleer of de aanvrager niet vervallen is van het recht tot sturen
+controleer of betrokkene reeds een VRB en/of RB heeft (in het CBR of eventueel nog in het RR) en haal de fiche uit het klassement waarop de noodzakelijke gegevens vermeld staan
+ 
+controleer of de begeleiders voldoen aan de voorwaarden
+formulier is ondertekend door begeleider
+er is geen verval van recht tot sturen de voorbije 3 jaar
+begeleider is minimum 26 jaar en heeft minstens 8 jaar het rijbewijs van die categorie.
+begeleider is geen begeleider geweest het voorbije jaar
+bereken vanaf welke datum de begeleider terug begeleider mag zijn
+ 
+ </documentation>
+      <incoming>FLOWb7248248-2e28-467c-9a57-11d6f1cb4d0f_899421d3-978b-4763-a465-dbde6fb22ecd</incoming>
+      <outgoing>FLOW899421d3-978b-4763-a465-dbde6fb22ecd_83ab7d6f-febc-4dbb-bff2-e9c912e7268e</outgoing>
+      <outgoing>FLOW899421d3-978b-4763-a465-dbde6fb22ecd_f5eb15e6-75f9-43fc-aa65-9b8f16872032</outgoing>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="899421d3-978b-4763-a465-dbde6fb22ecd" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of de volledige aanvraag (en aanvraagdocument) correct is&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;scan foto indien nog niet gebeurd&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of betrokkene voldoet aan de leeftijdsvoorwaarden en zijn de nodige&amp;nbsp;documenten bijgevoegd (rijschool? Groep 1?)&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of de aanvrager niet vervallen is van het recht tot sturen&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of betrokkene reeds een VRB en/of RB heeft (in het CBR of eventueel nog in het RR) en haal de fiche uit het klassement waarop de noodzakelijke gegevens vermeld staan&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of de begeleiders voldoen aan de voorwaarden&lt;/font&gt;&lt;ul&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;formulier is ondertekend door begeleider&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;er is geen verval van recht tot sturen de voorbije 3 jaar&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;begeleider is minimum 26 jaar en heeft minstens 8 jaar het rijbewijs van die categorie.&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;begeleider is geen begeleider geweest het voorbije jaar&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;bereken vanaf welke datum de begeleider terug begeleider mag zijn&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="ChoiceType" Value="Controle" />
+            <EngageProperty Name="IsRiskPoint" Value="true" />
+            <EngageProperty Name="Conditions" Value="In orde~|Niet in orde~" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </exclusiveGateway>
+    <manualTask id="NODE_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" name="Opmaak voorlopig rijbewijs" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>controleer de aanvraag (vul de correcte informatie in)
+ 
+bij categorie A1-A2-A : attest van de scholing bijgevoegd?
+ 
+bij model 3 cat BE en categorieën van groep 2 : controle van de begeleider(s) die moet(-en) voldoen aan de voorwaarden (zie wetgeving hieromtrent = leeftijd/categorie/verval/reeds begeleider?) en aanvraagdocument door bevoegd persoon laten ondertekenen. Indien begeleider niet voldoet aan de voorwaarden wordt de aanvrager in kennis gesteld hiervan. Indien begeleider OK, haal eveneens de fiche van de eventuele begeleider (indien deze van Aalter is) uit de fichebak en vermeld op de achterzijde van zijn rijbewijsfiche dat hij begeleider is van(datum van.. &amp; tot)
+ 
+categorieën van groep 2 : medische schifting vereist(hiervan kopie nemen en aan de fiche hechten) indien niet geschikt voor alle categorieën -&gt; origineel document = voor aanvraag van rijbewijs
+ 
+vul het aanvraagformulier verder aan (transactiecodes/motief CBR, datum aanmaak, handtekening)
+ 
+open het programma Mercurius en volg de instructies voor de aanvraag (FOD Mobiliteit)
+.
+Print de aanvraag af en vul het volgnummer van het aangevraagde voorlopig rijbewijs aan op deze print (en vul in op excellijst).
+ 
+vul een volgdocument in met wat er aan de balie nog dient te gebeuren en breng het VRB (in plasticmap met het volledig dossier) naar de snelbalie
+hou het dossier samen in plasticmap in afwachting levering ZETES.
+ </documentation>
+      <incoming>FLOW899421d3-978b-4763-a465-dbde6fb22ecd_83ab7d6f-febc-4dbb-bff2-e9c912e7268e</incoming>
+      <incoming>FLOWf5eb15e6-75f9-43fc-aa65-9b8f16872032_83ab7d6f-febc-4dbb-bff2-e9c912e7268e</incoming>
+      <outgoing>FLOW83ab7d6f-febc-4dbb-bff2-e9c912e7268e_d2496c21-1eaa-47ca-bae3-99ae4611ea11</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="83ab7d6f-febc-4dbb-bff2-e9c912e7268e" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer de aanvraag (vul de correcte informatie in)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;bij categorie A1-A2-A : attest van de scholing bijgevoegd?&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;bij model 3 cat BE en categorieën van groep 2 : controle van de begeleider(s) die moet(-en) voldoen aan de voorwaarden (zie wetgeving hieromtrent = leeftijd/categorie/verval/reeds begeleider?) en aanvraagdocument door bevoegd persoon laten ondertekenen. Indien begeleider niet voldoet aan de voorwaarden wordt de aanvrager in kennis gesteld hiervan. Indien begeleider OK, haal eveneens de fiche van de eventuele begeleider (indien deze van Aalter is) uit de fichebak en vermeld op de achterzijde van zijn rijbewijsfiche dat hij begeleider is van(datum van.. &amp;amp; tot)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;categorieën van groep 2 : medische schifting vereist(hiervan kopie nemen en aan de fiche hechten) indien niet geschikt voor alle categorieën -&amp;gt; origineel document = voor aanvraag van rijbewijs&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;vul het aanvraagformulier verder aan (transactiecodes/motief CBR, datum aanmaak, handtekening)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;open het programma Mercurius en volg de instructies voor de aanvraag (FOD Mobiliteit)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;.&lt;/font&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Print de aanvraag af en vul het volgnummer van het aangevraagde voorlopig rijbewijs aan op deze print (en vul in op excellijst).&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;vul een volgdocument in met wat er aan de balie nog dient te gebeuren en breng het VRB (in plasticmap met het volledig dossier) naar de snelbalie&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;hou het dossier samen in plasticmap in afwachting levering ZETES.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_d2496c21-1eaa-47ca-bae3-99ae4611ea11" name="Klaarmaken mapje voor balie" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Het rijbewijs is geleverd door de ZETES.
+ 
+voeg het rijbewijs toe in het daartoe opgemaakte mapje
+controleer of alles in orde is, op volgdocument noteren wat aan de balie vergeten is bij de aanvraag. (handtekeningen, attesten, betaling,...)
+leg het mapje klaar voor Eerste lijn - snelbalie</documentation>
+      <incoming>FLOW83ab7d6f-febc-4dbb-bff2-e9c912e7268e_d2496c21-1eaa-47ca-bae3-99ae4611ea11</incoming>
+      <incoming>FLOW8a09cf26-0375-4782-9f35-17ec05b14cfe_d2496c21-1eaa-47ca-bae3-99ae4611ea11</incoming>
+      <incoming>FLOW41067522-5e34-4d95-bedb-598fcf4eb5b3_d2496c21-1eaa-47ca-bae3-99ae4611ea11</incoming>
+      <outgoing>FLOWd2496c21-1eaa-47ca-bae3-99ae4611ea11_784ff95d-04c5-4c79-b952-07ea7a9b3134</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="d2496c21-1eaa-47ca-bae3-99ae4611ea11" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Het rijbewijs is geleverd door de ZETES.&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;voeg het rijbewijs toe in het daartoe opgemaakte mapje&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of alles in orde is, op volgdocument noteren wat aan de balie vergeten is bij de aanvraag. (handtekeningen, attesten, betaling,...)&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;leg het mapje klaar voor Eerste lijn - snelbalie&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_784ff95d-04c5-4c79-b952-07ea7a9b3134" name="Breng de burger op de hoogte" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Breng de aanvrager op de hoogte via mail of tel.
+</documentation>
+      <incoming>FLOWd2496c21-1eaa-47ca-bae3-99ae4611ea11_784ff95d-04c5-4c79-b952-07ea7a9b3134</incoming>
+      <outgoing>FLOW784ff95d-04c5-4c79-b952-07ea7a9b3134_3355b1ac-fe33-4287-8e56-1cef2bad4dec</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="784ff95d-04c5-4c79-b952-07ea7a9b3134" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;span style=&quot;font-size: 10pt; text-decoration-line: inherit;&quot;&gt;Breng de aanvrager op de hoogte via mail of tel.&lt;/span&gt;&lt;br&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <userTask id="NODE_3355b1ac-fe33-4287-8e56-1cef2bad4dec" name="Aflevering doc" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>De handelingen die bij afhalen van een rijbewijs nog moeten gebeuren, staan duidelijk vermeld op een begeleidend document
+ 
+Afhankelijk van het soort rijbewijs moet er al dan niet een oud rijbewijs worden afgegeven (bij niet-afgifte van het oude RB of attest van verlies/diefstal van de politie)
+ 
+Vul de noodzakelijke velden in op het volgdocument (datum, naam ambtenaar bij wie het rijbewijs werd afgehaald=aanspreekpunt voor back-office). Bezorg het mapje terug aan de cel Burgerzaken.
+ 
+Aandachtpunt!!! Internationale RBn moeten persoonlijk ter plaatse worden ondertekend (of met volmacht)
+ 
+ </documentation>
+      <incoming>FLOW784ff95d-04c5-4c79-b952-07ea7a9b3134_3355b1ac-fe33-4287-8e56-1cef2bad4dec</incoming>
+      <outgoing>FLOW3355b1ac-fe33-4287-8e56-1cef2bad4dec_7673971a-0c29-4b0a-a913-c96943c58898</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="3355b1ac-fe33-4287-8e56-1cef2bad4dec" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;De handelingen die bij afhalen van een rijbewijs nog moeten gebeuren, staan duidelijk vermeld op een begeleidend document&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;Afhankelijk van het soort rijbewijs moet er al dan niet een oud rijbewijs worden afgegeven (bij niet-afgifte van het oude RB of attest van verlies/diefstal van de politie)&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;&quot;&gt;Vul de noodzakelijke velden in&amp;nbsp;op het volgdocument (datum, naam ambtenaar bij wie het rijbewijs werd afgehaald=aanspreekpunt voor back-office). Bezorg het mapje terug aan de cel Burgerzaken.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;Aandachtpunt!!! Internationale RBn moeten persoonlijk ter plaatse worden ondertekend (of met volmacht)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;&lt;p style=&quot;font-family: Arial;&quot;&gt;&lt;/p&gt;&lt;/font&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="1" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </userTask>
+    <manualTask id="NODE_7673971a-0c29-4b0a-a913-c96943c58898" name="Afhandeling" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>IRB : 
+de aanvraagformulieren worden op datum en volgnr geklasseerd in een aparte map (per maand)
+Het oude IRB wordt aan de aanvraag gehangen.
+ 
+VRB en RB : 
+Ga naar programma Mercurius en geef in dat het RB is afgeleverd (zo dicht mogelijk tegen de echte afhaaldatum) Opgelet ! bij een gratis RB moet dit ook correct ingevuld worden in Mercurius (met reden). 
+Ga naar programma Mercurius en volg de instructies voor registratie afhaling 
+Ga naar de excellijst en vul datum van invoegen van webservice in op de lijst
+Niet de oude fiche aan de nieuwe fiche, samen met de eventuele andere nodige documenten (geneeskundige schifting, groep 1, groep 2 indien beperkt in categorieën, document van politierechtbank of correctionele rechtbank)
+Klasseer de fiches alfabetisch (RBn in het aparte klassement van de bankkaartmodellen.
+ 
+Opmerkingen :
+De FOD Mobiliteit en vervoer voert een controle uit op de betaling van de verschuldigde retributies. 
+http://www.mobilit.belgium.be/nl/
+Maandelijks ontvangt het bestuur de factuur van de gemaakte rijbewijzen. De controle gebeurt door de cel Burgerzaken.
+ 
+KB 23 maart 1998 : http://www.ejustice.just.fgov.be/
+
+ </documentation>
+      <incoming>FLOW3355b1ac-fe33-4287-8e56-1cef2bad4dec_7673971a-0c29-4b0a-a913-c96943c58898</incoming>
+      <outgoing>FLOW7673971a-0c29-4b0a-a913-c96943c58898_b0a0ebd6-04ff-47c4-b669-a2bb58bad056</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="7673971a-0c29-4b0a-a913-c96943c58898" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;strong style=&quot;&quot;&gt;&lt;u style=&quot;&quot;&gt;IRB : &lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;de aanvraagformulieren worden op datum en volgnr geklasseerd in een aparte map (per maand)&lt;/p&gt;&lt;p style=&quot;&quot;&gt;Het oude IRB wordt aan de aanvraag gehangen.&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;u&gt;&lt;strong&gt;VRB en RB : &lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;Ga naar programma Mercurius en geef in dat het RB is afgeleverd (zo dicht mogelijk tegen de echte afhaaldatum) Opgelet ! bij een gratis RB moet dit ook correct ingevuld worden in Mercurius (met reden). &lt;/li&gt;&lt;li&gt;Ga naar programma Mercurius en volg de instructies voor registratie afhaling &lt;/li&gt;&lt;li&gt;Ga naar de excellijst en vul&amp;nbsp;datum van invoegen van webservice&amp;nbsp;in op de lijst&lt;/li&gt;&lt;li&gt;Niet de oude fiche aan de nieuwe fiche, samen met de eventuele andere nodige documenten (geneeskundige schifting, groep 1, groep 2 indien beperkt in categorieën, document van politierechtbank of correctionele rechtbank)&lt;/li&gt;&lt;li&gt;Klasseer de fiches alfabetisch (RBn in het aparte klassement van de bankkaartmodellen.&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;strong&gt;&lt;u&gt;Opmerkingen &lt;em&gt;:&lt;/em&gt;&lt;/u&gt;&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;De FOD Mobiliteit en vervoer voert een controle uit op de betaling van de verschuldigde retributies. &lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;a href=&quot;http://www.mobilit.belgium.be/nl/&quot;&gt;http://www.mobilit.belgium.be/nl/&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;Maandelijks ontvangt het bestuur de factuur van de gemaakte rijbewijzen. De controle gebeurt door de cel Burgerzaken.&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 10pt; text-decoration-line: inherit;&quot;&gt;KB 23 maart 1998 : http://www.ejustice.just.fgov.be/&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="Document">
+              <EngageValueItem Name="KB 23 maart 1998" Guid="634987d4-7e83-4798-ae8f-bd39c550199c" />
+            </EngageProperty>
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <endEvent id="NODE_b0a0ebd6-04ff-47c4-b669-a2bb58bad056" name="Stop">
+      <documentation />
+      <incoming>FLOW7673971a-0c29-4b0a-a913-c96943c58898_b0a0ebd6-04ff-47c4-b669-a2bb58bad056</incoming>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="b0a0ebd6-04ff-47c4-b669-a2bb58bad056" />
+            <EngageProperty Name="ExitType" Value="Stop" />
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </endEvent>
+    <manualTask id="NODE_f5eb15e6-75f9-43fc-aa65-9b8f16872032" name="Contact opnemen met de veroorzaker" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Indien er iets ontbreekt waardoor de aanvraag niet volledig is, dient er contact opgenomen te worden met de veroorzaker = ( burger, medische dienst, rijschool of de balie,...).</documentation>
+      <incoming>FLOW899421d3-978b-4763-a465-dbde6fb22ecd_f5eb15e6-75f9-43fc-aa65-9b8f16872032</incoming>
+      <outgoing>FLOWf5eb15e6-75f9-43fc-aa65-9b8f16872032_83ab7d6f-febc-4dbb-bff2-e9c912e7268e</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="f5eb15e6-75f9-43fc-aa65-9b8f16872032" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Indien er iets ontbreekt waardoor de aanvraag niet volledig is, dient er contact opgenomen te worden met de veroorzaker = ( burger, medische dienst, rijschool of de balie,...).&lt;/font&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_1d15bd90-78d3-4b18-a0e9-0b3f5b899917" name="Rijbewijs" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Aanvraag door geslaagd examen nieuwe categorie, omwisseling uit vrije wil, vernieling, beschadiging of niet gelijkende foto, medische schifting groep 1 of groep 2, wegens verval van recht tot sturen voor bepaalde categorieën of wegens andere beperkingen (FOD Mobiliteit), tijdelijk wegens verval met herstelonderzoeken, wegens verhoging categorie zonder examens, vakbekwaamheid, omwisseling EU of niet-EU
+ 
+Afhankelijk van de reden van aanvraag het aanvraagdocument controleren of dit volledig is ingevuld en ondertekend (voor-en achterzijde)
+ 
+AM + attest rijschool (en/ of A)
+ 
+vul het volgdocument aan met de nodige gegevens
+ 
+foto's : al dan niet foto en handtekening/foto uit het bestand van de identiteitskaarten (Belpic), ondertekenen van toestemming foto/handtekening. 
+ 
+indien foto en/of handtekening niet OK in Belpic moet deze ingescand worden (aanvragen van TitelIdnr aan back-office) en dan foto en/of handtekening inscannen
+ 
+voor aanvraag categorie groep 1 of 2 waarbij de medische schifting (en eventuele basiskwalificatie bij 1e aanvraag volbekwaamheid nieuwe categorie C1, C, D1, D) vereist is, deze bij de aanvraag voegen (controleren of aanvraag correct is ingevuld en ondertekend)
+ 
+Bij nascholing VBH uren en thema's zichtbaar in Mercurius.
+ 
+voor aanvraag tijdelijk rijbewijs door verval  voor bepaalde categorieën met herstelonderzoeken of weekendverval moet het aanvraagdocument van de politierechtbank of correctionele rechtbank afgegeven worden (max 1 maand oud). Afhankelijk van welke rechtbank , kan origineel RB dan terug afgehaald worden nà periode van verval bij volledig herstel PR of CR of gemeente. Indien tijdelijk herstel, na examens opnieuw RB aan te vragen.
+ 
+Omwisseling EU of niet Europees: zie FOD Mobiliteit
+ 
+melden dat de burger zal worden verwittigd wanneer RB beschikbaar is - via e-mail of telefonisch (bij  IRB wordt dit onmiddellijk medegedeeld)
+ 
+rijbewijs : 25 euro - gratis indien verlenging van groep 1 of bij administratieve fout (uitzonderlijk)
+ </documentation>
+      <incoming>FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_1d15bd90-78d3-4b18-a0e9-0b3f5b899917</incoming>
+      <outgoing>FLOW1d15bd90-78d3-4b18-a0e9-0b3f5b899917_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="1d15bd90-78d3-4b18-a0e9-0b3f5b899917" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Aanvraag door geslaagd examen nieuwe categorie, omwisseling uit vrije wil, vernieling, beschadiging of niet gelijkende foto,&amp;nbsp;medische schifting groep 1 of groep 2, wegens verval van recht tot sturen voor bepaalde categorieën of wegens andere beperkingen (FOD Mobiliteit), tijdelijk wegens verval met herstelonderzoeken, wegens verhoging categorie zonder examens, vakbekwaamheid, omwisseling EU of niet-EU&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Afhankelijk van de reden van aanvraag het aanvraagdocument controleren of dit volledig is ingevuld en ondertekend (voor-en achterzijde)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;AM + attest rijschool (en/ of A)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;vul het volgdocument aan met de nodige gegevens&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;foto's : al dan niet foto en handtekening/foto uit het bestand van de identiteitskaarten (Belpic), ondertekenen van toestemming foto/handtekening. &lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;indien foto en/of handtekening niet OK in Belpic moet deze ingescand worden (aanvragen van TitelIdnr aan back-office) en dan foto en/of handtekening inscannen&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;voor aanvraag categorie groep 1 of 2 waarbij de medische schifting (en eventuele basiskwalificatie bij 1e aanvraag volbekwaamheid nieuwe categorie C1, C, D1, D) vereist is, deze bij de aanvraag voegen (controleren of aanvraag correct is ingevuld en ondertekend)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Bij nascholing VBH uren en thema's zichtbaar in Mercurius.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;voor aanvraag tijdelijk rijbewijs door verval&amp;nbsp; voor bepaalde categorieën met herstelonderzoeken of weekendverval moet het aanvraagdocument van de politierechtbank of correctionele rechtbank afgegeven worden (max 1 maand oud). Afhankelijk van welke rechtbank , kan origineel RB dan terug afgehaald worden nà periode van verval bij volledig herstel&amp;nbsp;PR of CR of gemeente. Indien tijdelijk herstel, na examens opnieuw RB aan te vragen.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Omwisseling EU of niet Europees: zie FOD Mobiliteit&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;melden dat de burger zal worden verwittigd wanneer RB beschikbaar is - via e-mail of telefonisch (bij&amp;nbsp; IRB wordt dit onmiddellijk medegedeeld)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;rijbewijs : 25 euro - gratis indien verlenging van groep 1 of bij administratieve fout (uitzonderlijk)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <exclusiveGateway id="NODE_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9" name="Aanvraag rijbewijs" gatewayDirection="Diverging">
+      <documentation>controleer of betrokkene een VRB en/of RB heeft (in het CBR ) en haal de fiche(s) uit het klassement, hierop staan de belangrijkste gegevens op vermeld. Eventueel ook strafregister controleren (verval, ...)
+scan foto in indien nog niet gebeurd ( à balie)
+ 
+controleer of betrokkene voldoet aan alle voorwaarden tot het bekomen van het aangevraagde rijbewijs (FOD Mobiliteit), afhankelijk van de aangevraagde categorie moeten de nodige documenten bijgevoegd worden.
+ 
+controleer of de aanvrager niet vervallen is van het recht tot sturen
+ 
+controleer of aanvraag correct is gebeurd à balie:
+niet ondertekend
+ontbrekend document
+voldoet niet à de voorwaarden
+...
+ 
+ </documentation>
+      <incoming>FLOW1d15bd90-78d3-4b18-a0e9-0b3f5b899917_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9</incoming>
+      <outgoing>FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_8a09cf26-0375-4782-9f35-17ec05b14cfe</outgoing>
+      <outgoing>FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_d816a68b-346c-4455-946b-4e5d3e3a17ff</outgoing>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="6c6724e2-5353-49fd-95ee-ce93e2b1e8c9" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of betrokkene een VRB en/of RB heeft (in het CBR ) en haal de fiche(s) uit het klassement, hierop staan de belangrijkste gegevens op vermeld. Eventueel ook strafregister controleren (verval, ...)&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;scan foto in indien nog niet gebeurd ( à balie)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of betrokkene voldoet aan alle voorwaarden tot het bekomen van het aangevraagde rijbewijs (FOD Mobiliteit), afhankelijk van de aangevraagde categorie moeten de nodige documenten bijgevoegd worden.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of de aanvrager niet vervallen is van het recht tot sturen&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of aanvraag correct is gebeurd à balie:&lt;/font&gt;&lt;ul&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;niet ondertekend&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;ontbrekend document&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;voldoet niet à de voorwaarden&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;...&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="ChoiceType" Value="Controle" />
+            <EngageProperty Name="IsRiskPoint" Value="true" />
+            <EngageProperty Name="Conditions" Value="In orde~|Niet in orde~" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </exclusiveGateway>
+    <manualTask id="NODE_8a09cf26-0375-4782-9f35-17ec05b14cfe" name="Opmaak rijbewijs" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>controleer de aanvraag
+ 
+open het programma Mercurius en volg de instructies op het scherm voor de aanvraag (wetgever FOD Mobiliteit)
+ 
+Neem de gegevens over van het examencentrum
+ 
+Let op ! Niet alle gegevens worden automatisch ingevuld! Wetgeving ! Data correct + andere gegevens + de medisch codes worden niet automatisch overgenomen + de rijverboden zijn ook niet altijd correct ingevuld..
+ 
+Print de aanvraag af en vul het volgnummer van het aangevraagde RB aan op deze print
+ 
+Vul de gegevens van de aanvraag in op de excellijst Mercurius
+ 
+Vul het volgdocument in met wat er aan de balie nog moet gebeuren bij afhaling.
+ 
+Hou het dossier samen in plasticmap, in afwachting tot het RB geleverd wordt door Zetes
+ </documentation>
+      <incoming>FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_8a09cf26-0375-4782-9f35-17ec05b14cfe</incoming>
+      <outgoing>FLOW8a09cf26-0375-4782-9f35-17ec05b14cfe_d2496c21-1eaa-47ca-bae3-99ae4611ea11</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="8a09cf26-0375-4782-9f35-17ec05b14cfe" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer de aanvraag&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;open het programma Mercurius en volg de instructies op het scherm voor de aanvraag (wetgever FOD Mobiliteit)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Neem de gegevens over van het examencentrum&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt; color: rgb(255, 0, 0);&quot;&gt;Let op ! Niet alle gegevens worden automatisch ingevuld! Wetgeving ! Data correct + andere gegevens + de medisch codes worden niet automatisch overgenomen + de rijverboden zijn ook niet altijd correct ingevuld..&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt; color: rgb(255, 0, 0);&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Print de aanvraag af en vul het volgnummer van het aangevraagde RB aan op deze print&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Vul de gegevens van de aanvraag in op de excellijst Mercurius&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Vul het volgdocument in met wat er aan de balie nog moet gebeuren bij afhaling.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Hou het dossier samen in plasticmap, in afwachting tot het RB geleverd wordt door Zetes&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_d816a68b-346c-4455-946b-4e5d3e3a17ff" name="Contact opnemen met de veroorzaker" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Indien er iets ontbreekt waardoor de aanvraag niet volledig is, dient er contact opgenomen te worden met de veroorzaker = ( burger, medische dienst, rijschool of de balie,...).</documentation>
+      <incoming>FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_d816a68b-346c-4455-946b-4e5d3e3a17ff</incoming>
+      <outgoing>FLOWd816a68b-346c-4455-946b-4e5d3e3a17ff_9cd03841-3a89-41e4-b914-fca40909a247</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="d816a68b-346c-4455-946b-4e5d3e3a17ff" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Indien er iets ontbreekt waardoor de aanvraag niet volledig is, dient er contact opgenomen te worden met de veroorzaker = ( burger, medische dienst, rijschool of de balie,...).&lt;/font&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <endEvent id="NODE_9cd03841-3a89-41e4-b914-fca40909a247" name="Stop">
+      <documentation />
+      <incoming>FLOWd816a68b-346c-4455-946b-4e5d3e3a17ff_9cd03841-3a89-41e4-b914-fca40909a247</incoming>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="9cd03841-3a89-41e4-b914-fca40909a247" />
+            <EngageProperty Name="ExitType" Value="Stop" />
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </endEvent>
+    <manualTask id="NODE_4faae827-0fc3-466d-972b-ebfc5a546b7a" name="Internationaal rijbewijs" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>controleer of betrokkene reeds IRB had (af te geven bij afhaling van het nieuwe) en controleer of zij/hij reeds in het bezit is van een Europees RB. Indien de foto niet meer gelijkend is, moet er eveneens een omwisseling van een rijbewijs gebeuren
+controleer of betrokkene nog geldige groep 2-categorie heeft voor de periode van geldigheid IRB (3 jaar) d.w.z. indien categorie C of D geen 3 jaar meer geldig is, einddatum IRB tot einde medische schifting. Zo neen, vragen of hij/zij deze cat. nodig heeft in het buitenland. IRB heeft maar 1 geldigheidsdatum.
+ 
+1 pasfoto
+ 
+internationaal RB : 21 euro
+ 
+melden wanneer het IRB mag afgehaald worden
+Nagaan wanneer het rijbewijs verloopt (Bankkaartmodel = 10 jaar geldig) 
+Internationaal RB kan maar geldig gemaakt worden tot einddatum rijbewijs.
+ </documentation>
+      <incoming>FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_4faae827-0fc3-466d-972b-ebfc5a546b7a</incoming>
+      <outgoing>FLOW4faae827-0fc3-466d-972b-ebfc5a546b7a_167309a4-4a34-4161-af7d-080ec7853ddc</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">b1b70f39-f888-4cb3-8fd3-587cfa33bb5b</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="4faae827-0fc3-466d-972b-ebfc5a546b7a" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;controleer of betrokkene reeds IRB had (af te geven bij afhaling van het nieuwe) en controleer of zij/hij reeds in het bezit is van een Europees RB. Indien de foto niet meer gelijkend is, moet er eveneens een omwisseling van een rijbewijs gebeuren&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 10pt; text-decoration-line: inherit;&quot;&gt;controleer of betrokkene nog geldige groep 2-categorie heeft voor de periode van geldigheid IRB (3 jaar) d.w.z. indien categorie C of D geen 3 jaar meer geldig is, einddatum IRB tot einde medische schifting. Zo neen, vragen of hij/zij deze cat. nodig heeft in het buitenland. IRB heeft maar 1 geldigheidsdatum.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;1 pasfoto&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;internationaal RB : 21 euro&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;melden wanneer het IRB mag afgehaald worden&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt; color: rgb(255, 0, 0);&quot;&gt;Nagaan wanneer het rijbewijs verloopt (Bankkaartmodel = 10 jaar geldig)&amp;nbsp;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt; color: rgb(255, 0, 0);&quot;&gt;Internationaal RB kan maar geldig gemaakt worden tot einddatum rijbewijs.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 10pt;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Eerste lijn" Guid="b1b70f39-f888-4cb3-8fd3-587cfa33bb5b" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <exclusiveGateway id="NODE_167309a4-4a34-4161-af7d-080ec7853ddc" name="Aanvraag Internationaal rijbewijs" gatewayDirection="Diverging">
+      <documentation>Controleer of betrokkene niet vervallen is van het recht tot sturen
+ 
+Controleer of betrokkene in het bezit is van een Europees RB (zo niet: eerst aan te vragen). IRB pas aanmaken wanneer RB is geregistreerd als afgehaald
+ 
+Controleer de data van de geldige categorieën ( 3 jaar geldig?)
+Controleer de einddatum van het rijbewijs (geldig tot?), einddatum internationaal rijbewijs = einddatum nationaal rijbewijs
+ </documentation>
+      <incoming>FLOW4faae827-0fc3-466d-972b-ebfc5a546b7a_167309a4-4a34-4161-af7d-080ec7853ddc</incoming>
+      <outgoing>FLOW167309a4-4a34-4161-af7d-080ec7853ddc_41067522-5e34-4d95-bedb-598fcf4eb5b3</outgoing>
+      <outgoing>FLOW167309a4-4a34-4161-af7d-080ec7853ddc_67692ce8-e32c-499a-8408-2c7bfee321ee</outgoing>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="167309a4-4a34-4161-af7d-080ec7853ddc" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Controleer of betrokkene niet vervallen is van het recht tot sturen&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Controleer of betrokkene in het bezit is van een Europees RB (zo niet: eerst aan te vragen). IRB pas aanmaken wanneer RB is geregistreerd als afgehaald&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Controleer de data van de geldige categorieën ( 3 jaar geldig?)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt; color: rgb(255, 0, 0);&quot;&gt;Controleer de einddatum van het rijbewijs (geldig tot?), einddatum internationaal rijbewijs = einddatum nationaal rijbewijs&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="ChoiceType" Value="Controle" />
+            <EngageProperty Name="IsRiskPoint" Value="true" />
+            <EngageProperty Name="Conditions" Value="In orde~|Niet in orde~" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </exclusiveGateway>
+    <manualTask id="NODE_41067522-5e34-4d95-bedb-598fcf4eb5b3" name="Opmaak internationaal RB" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Neem de fiche van het RB uit het klassement
+ 
+Neem een internationaal RB blanco (volgens volgnummer)
+ 
+Registreren via Mercurius
+ 
+Ga naar programma  CEVI Procedure IRB en volg de instructies/ wetgeving (link FOD Mobilit) voor de aanmaak en print van het IRB
+ 
+Afstempelen, foto kleven, droogzegel, handtekening en kopie nemen van het IRB
+ 
+Invullen op excellijst op volgnummer
+ 
+ het volgdocument verder invullen.
+ 
+oud IRB altijd af te geven, noteren op volgdocument van nummer en data.
+ 
+Indien oud IRB nog geldig was, is verloren of gestolen = attest van de politie (nr en gegevens zelf doorbellen politie).
+ 
+Indien oud IRB niet meer geldig was, verklaring laten ondertekenen.
+ 
+In plastic mapje steken en naar snelbalie brengen (volledig mapje)
+ 
+Op RB-fiche noteren : IRB nr van tot  
+ </documentation>
+      <incoming>FLOW167309a4-4a34-4161-af7d-080ec7853ddc_41067522-5e34-4d95-bedb-598fcf4eb5b3</incoming>
+      <outgoing>FLOW41067522-5e34-4d95-bedb-598fcf4eb5b3_d2496c21-1eaa-47ca-bae3-99ae4611ea11</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="41067522-5e34-4d95-bedb-598fcf4eb5b3" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Neem de fiche van&amp;nbsp;het RB uit het klassement&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Neem een internationaal RB blanco (volgens volgnummer)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Registreren via Mercurius&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Ga naar programma&amp;nbsp; CEVI Procedure IRB en volg de instructies/ wetgeving (link FOD Mobilit) voor de aanmaak en print van het IRB&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Afstempelen, foto kleven, droogzegel, handtekening en kopie nemen van het IRB&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Invullen op excellijst op volgnummer&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&amp;nbsp;het volgdocument verder invullen.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;oud IRB altijd af te geven, noteren op volgdocument van nummer en data.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Indien oud IRB nog geldig was, is verloren of gestolen = attest van de politie (nr en gegevens zelf doorbellen politie).&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Indien oud IRB niet meer geldig was, verklaring laten ondertekenen.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;In plastic mapje steken en naar snelbalie brengen (volledig mapje)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;&lt;/font&gt;&amp;nbsp;&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10pt;&quot;&gt;Op RB-fiche noteren : IRB nr van tot &lt;/font&gt; &lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;/font&gt;" />
+            <EngageProperty Name="Remarks" Value="&lt;FONT size=2 face=Arial&gt;&lt;/FONT&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+            <EngageProperty Name="RolesAccountable">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <manualTask id="NODE_67692ce8-e32c-499a-8408-2c7bfee321ee" name="Contact opnemen met de veroorzaker" completionQuantity="1" isForCompensation="false" startQuantity="1">
+      <documentation>Indien er iets ontbreekt waardoor de aanvraag niet volledig is, dient er contact opgenomen te worden met de veroorzaker = ( burger, medische dienst, rijschool of de balie,...).</documentation>
+      <incoming>FLOW167309a4-4a34-4161-af7d-080ec7853ddc_67692ce8-e32c-499a-8408-2c7bfee321ee</incoming>
+      <outgoing>FLOW67692ce8-e32c-499a-8408-2c7bfee321ee_4f3b53b1-7c35-454e-9514-241511f7c452</outgoing>
+      <resourceRole>
+        <resourceRef xmlns:q1="http://www.omg.org/spec/DD/20100524/MODEL">730ff209-27be-400b-b2ce-9bd0702f1e21</resourceRef>
+      </resourceRole>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="67692ce8-e32c-499a-8408-2c7bfee321ee" />
+            <EngageProperty Name="HTMLDescription" Value="&lt;font style=&quot;font-size: 10pt; font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;Indien er iets ontbreekt waardoor de aanvraag niet volledig is, dient er contact opgenomen te worden met de veroorzaker = ( burger, medische dienst, rijschool of de balie,...).&lt;/font&gt;" />
+            <EngageProperty Name="TaskType" Value="Manual" />
+            <EngageProperty Name="Roles">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" Participants="1" />
+            </EngageProperty>
+            <EngageProperty Name="NumberOfParticipants" Value="1" />
+            <EngageProperty Name="RolesResponsible">
+              <EngageValueItem Name="Burgerzaken" Guid="730ff209-27be-400b-b2ce-9bd0702f1e21" />
+            </EngageProperty>
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </manualTask>
+    <endEvent id="NODE_4f3b53b1-7c35-454e-9514-241511f7c452" name="Stop">
+      <documentation />
+      <incoming>FLOW67692ce8-e32c-499a-8408-2c7bfee321ee_4f3b53b1-7c35-454e-9514-241511f7c452</incoming>
+      <extensionElements>
+        <EngageExtensions xmlns="http://www.engage-software.com/rest/v1">
+          <EngageProperties>
+            <EngageProperty Name="Guid" Value="4f3b53b1-7c35-454e-9514-241511f7c452" />
+            <EngageProperty Name="ExitType" Value="Stop" />
+          </EngageProperties>
+        </EngageExtensions>
+      </extensionElements>
+    </endEvent>
+    <sequenceFlow id="FLOW62f244ca-7378-40e6-9b21-0ceef61b949e_2c376775-e972-4047-885a-46e57a809d9f" sourceRef="NODE_62f244ca-7378-40e6-9b21-0ceef61b949e" targetRef="NODE_2c376775-e972-4047-885a-46e57a809d9f" name="" />
+    <sequenceFlow id="FLOW2c376775-e972-4047-885a-46e57a809d9f_0d1e9914-d0fb-4cae-ba49-c188df5f8972" sourceRef="NODE_2c376775-e972-4047-885a-46e57a809d9f" targetRef="NODE_0d1e9914-d0fb-4cae-ba49-c188df5f8972" name="" />
+    <sequenceFlow id="FLOW0d1e9914-d0fb-4cae-ba49-c188df5f8972_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" sourceRef="NODE_0d1e9914-d0fb-4cae-ba49-c188df5f8972" targetRef="NODE_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" name="" />
+    <sequenceFlow id="FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_3c58d451-237e-4855-8ccc-2421b4b198ea" sourceRef="NODE_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" targetRef="NODE_3c58d451-237e-4855-8ccc-2421b4b198ea" name="" />
+    <sequenceFlow id="FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_1d15bd90-78d3-4b18-a0e9-0b3f5b899917" sourceRef="NODE_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" targetRef="NODE_1d15bd90-78d3-4b18-a0e9-0b3f5b899917" name="" />
+    <sequenceFlow id="FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_4faae827-0fc3-466d-972b-ebfc5a546b7a" sourceRef="NODE_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" targetRef="NODE_4faae827-0fc3-466d-972b-ebfc5a546b7a" name="" />
+    <sequenceFlow id="FLOW3c58d451-237e-4855-8ccc-2421b4b198ea_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" sourceRef="NODE_3c58d451-237e-4855-8ccc-2421b4b198ea" targetRef="NODE_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" name="" />
+    <sequenceFlow id="FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_2df41ce3-574c-4db6-b3e2-d97bf6247152" sourceRef="NODE_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" targetRef="NODE_2df41ce3-574c-4db6-b3e2-d97bf6247152" name="" />
+    <sequenceFlow id="FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_9abc0b53-2693-4c5e-a953-6c2a3005afbe" sourceRef="NODE_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" targetRef="NODE_9abc0b53-2693-4c5e-a953-6c2a3005afbe" name="" />
+    <sequenceFlow id="FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_7fde6817-aa90-4bf6-ac4a-b10a2228348e" sourceRef="NODE_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" targetRef="NODE_7fde6817-aa90-4bf6-ac4a-b10a2228348e" name="" />
+    <sequenceFlow id="FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_63a5e022-4e89-4772-8935-aee39688ea50" sourceRef="NODE_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" targetRef="NODE_63a5e022-4e89-4772-8935-aee39688ea50" name="" />
+    <sequenceFlow id="FLOW2df41ce3-574c-4db6-b3e2-d97bf6247152_b7248248-2e28-467c-9a57-11d6f1cb4d0f" sourceRef="NODE_2df41ce3-574c-4db6-b3e2-d97bf6247152" targetRef="NODE_b7248248-2e28-467c-9a57-11d6f1cb4d0f" name="" />
+    <sequenceFlow id="FLOW9abc0b53-2693-4c5e-a953-6c2a3005afbe_b7248248-2e28-467c-9a57-11d6f1cb4d0f" sourceRef="NODE_9abc0b53-2693-4c5e-a953-6c2a3005afbe" targetRef="NODE_b7248248-2e28-467c-9a57-11d6f1cb4d0f" name="" />
+    <sequenceFlow id="FLOW7fde6817-aa90-4bf6-ac4a-b10a2228348e_b7248248-2e28-467c-9a57-11d6f1cb4d0f" sourceRef="NODE_7fde6817-aa90-4bf6-ac4a-b10a2228348e" targetRef="NODE_b7248248-2e28-467c-9a57-11d6f1cb4d0f" name="" />
+    <sequenceFlow id="FLOW63a5e022-4e89-4772-8935-aee39688ea50_b7248248-2e28-467c-9a57-11d6f1cb4d0f" sourceRef="NODE_63a5e022-4e89-4772-8935-aee39688ea50" targetRef="NODE_b7248248-2e28-467c-9a57-11d6f1cb4d0f" name="" />
+    <sequenceFlow id="FLOWb7248248-2e28-467c-9a57-11d6f1cb4d0f_899421d3-978b-4763-a465-dbde6fb22ecd" sourceRef="NODE_b7248248-2e28-467c-9a57-11d6f1cb4d0f" targetRef="NODE_899421d3-978b-4763-a465-dbde6fb22ecd" name="" />
+    <sequenceFlow id="FLOW899421d3-978b-4763-a465-dbde6fb22ecd_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" sourceRef="NODE_899421d3-978b-4763-a465-dbde6fb22ecd" targetRef="NODE_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" name="In orde" />
+    <sequenceFlow id="FLOW899421d3-978b-4763-a465-dbde6fb22ecd_f5eb15e6-75f9-43fc-aa65-9b8f16872032" sourceRef="NODE_899421d3-978b-4763-a465-dbde6fb22ecd" targetRef="NODE_f5eb15e6-75f9-43fc-aa65-9b8f16872032" name="Niet in orde" />
+    <sequenceFlow id="FLOW83ab7d6f-febc-4dbb-bff2-e9c912e7268e_d2496c21-1eaa-47ca-bae3-99ae4611ea11" sourceRef="NODE_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" targetRef="NODE_d2496c21-1eaa-47ca-bae3-99ae4611ea11" name="" />
+    <sequenceFlow id="FLOWd2496c21-1eaa-47ca-bae3-99ae4611ea11_784ff95d-04c5-4c79-b952-07ea7a9b3134" sourceRef="NODE_d2496c21-1eaa-47ca-bae3-99ae4611ea11" targetRef="NODE_784ff95d-04c5-4c79-b952-07ea7a9b3134" name="" />
+    <sequenceFlow id="FLOW784ff95d-04c5-4c79-b952-07ea7a9b3134_3355b1ac-fe33-4287-8e56-1cef2bad4dec" sourceRef="NODE_784ff95d-04c5-4c79-b952-07ea7a9b3134" targetRef="NODE_3355b1ac-fe33-4287-8e56-1cef2bad4dec" name="" />
+    <sequenceFlow id="FLOW3355b1ac-fe33-4287-8e56-1cef2bad4dec_7673971a-0c29-4b0a-a913-c96943c58898" sourceRef="NODE_3355b1ac-fe33-4287-8e56-1cef2bad4dec" targetRef="NODE_7673971a-0c29-4b0a-a913-c96943c58898" name="" />
+    <sequenceFlow id="FLOW7673971a-0c29-4b0a-a913-c96943c58898_b0a0ebd6-04ff-47c4-b669-a2bb58bad056" sourceRef="NODE_7673971a-0c29-4b0a-a913-c96943c58898" targetRef="NODE_b0a0ebd6-04ff-47c4-b669-a2bb58bad056" name="" />
+    <sequenceFlow id="FLOWf5eb15e6-75f9-43fc-aa65-9b8f16872032_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" sourceRef="NODE_f5eb15e6-75f9-43fc-aa65-9b8f16872032" targetRef="NODE_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" name="" />
+    <sequenceFlow id="FLOW1d15bd90-78d3-4b18-a0e9-0b3f5b899917_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9" sourceRef="NODE_1d15bd90-78d3-4b18-a0e9-0b3f5b899917" targetRef="NODE_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9" name="" />
+    <sequenceFlow id="FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_8a09cf26-0375-4782-9f35-17ec05b14cfe" sourceRef="NODE_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9" targetRef="NODE_8a09cf26-0375-4782-9f35-17ec05b14cfe" name="In orde" />
+    <sequenceFlow id="FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_d816a68b-346c-4455-946b-4e5d3e3a17ff" sourceRef="NODE_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9" targetRef="NODE_d816a68b-346c-4455-946b-4e5d3e3a17ff" name="Niet in orde" />
+    <sequenceFlow id="FLOW8a09cf26-0375-4782-9f35-17ec05b14cfe_d2496c21-1eaa-47ca-bae3-99ae4611ea11" sourceRef="NODE_8a09cf26-0375-4782-9f35-17ec05b14cfe" targetRef="NODE_d2496c21-1eaa-47ca-bae3-99ae4611ea11" name="" />
+    <sequenceFlow id="FLOWd816a68b-346c-4455-946b-4e5d3e3a17ff_9cd03841-3a89-41e4-b914-fca40909a247" sourceRef="NODE_d816a68b-346c-4455-946b-4e5d3e3a17ff" targetRef="NODE_9cd03841-3a89-41e4-b914-fca40909a247" name="" />
+    <sequenceFlow id="FLOW4faae827-0fc3-466d-972b-ebfc5a546b7a_167309a4-4a34-4161-af7d-080ec7853ddc" sourceRef="NODE_4faae827-0fc3-466d-972b-ebfc5a546b7a" targetRef="NODE_167309a4-4a34-4161-af7d-080ec7853ddc" name="" />
+    <sequenceFlow id="FLOW167309a4-4a34-4161-af7d-080ec7853ddc_41067522-5e34-4d95-bedb-598fcf4eb5b3" sourceRef="NODE_167309a4-4a34-4161-af7d-080ec7853ddc" targetRef="NODE_41067522-5e34-4d95-bedb-598fcf4eb5b3" name="In orde" />
+    <sequenceFlow id="FLOW167309a4-4a34-4161-af7d-080ec7853ddc_67692ce8-e32c-499a-8408-2c7bfee321ee" sourceRef="NODE_167309a4-4a34-4161-af7d-080ec7853ddc" targetRef="NODE_67692ce8-e32c-499a-8408-2c7bfee321ee" name="Niet in orde" />
+    <sequenceFlow id="FLOW41067522-5e34-4d95-bedb-598fcf4eb5b3_d2496c21-1eaa-47ca-bae3-99ae4611ea11" sourceRef="NODE_41067522-5e34-4d95-bedb-598fcf4eb5b3" targetRef="NODE_d2496c21-1eaa-47ca-bae3-99ae4611ea11" name="" />
+    <sequenceFlow id="FLOW67692ce8-e32c-499a-8408-2c7bfee321ee_4f3b53b1-7c35-454e-9514-241511f7c452" sourceRef="NODE_67692ce8-e32c-499a-8408-2c7bfee321ee" targetRef="NODE_4f3b53b1-7c35-454e-9514-241511f7c452" name="" />
+  </process>
+  <collaboration id="COLLABORATION_21dbb684-16b5-448b-b395-ea38bee16782" name="Aanvraag_rijbewijs (37)">
+    <participant id="21dbb684-16b5-448b-b395-ea38bee16782" name="Aanvraag_rijbewijs (37)" processRef="PROCESS_21dbb684-16b5-448b-b395-ea38bee16782" />
+  </collaboration>
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane id="1" bpmnElement="COLLABORATION_21dbb684-16b5-448b-b395-ea38bee16782">
+      <bpmndi:BPMNShape id="_21dbb684-16b5-448b-b395-ea38bee16782" bpmnElement="21dbb684-16b5-448b-b395-ea38bee16782" isHorizontal="true">
+        <bpmndi:extension />
+        <dc:Bounds x="0" y="0" height="1260" width="2520" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW62f244ca-7378-40e6-9b21-0ceef61b949e_2c376775-e972-4047-885a-46e57a809d9f" id="Engage_FLOW62f244ca-7378-40e6-9b21-0ceef61b949e_2c376775-e972-4047-885a-46e57a809d9f">
+        <di:waypoint x="148" y="80" />
+        <di:waypoint x="232" y="80" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="ASSOCASSOC_62f244ca-7378-40e6-9b21-0ceef61b949e" id="Engage_ASSOCASSOC_62f244ca-7378-40e6-9b21-0ceef61b949e">
+        <di:waypoint x="120" y="50" />
+        <di:waypoint x="58" y="183" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_2122176c-e5ab-4b7f-9c52-0047658ac74c" bpmnElement="ASSOC_62f244ca-7378-40e6-9b21-0ceef61b949e">
+        <dc:Bounds x="58" y="133" height="99" width="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_62f244ca-7378-40e6-9b21-0ceef61b949e" bpmnElement="NODE_62f244ca-7378-40e6-9b21-0ceef61b949e">
+        <bpmndi:extension />
+        <dc:Bounds x="90" y="50" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW2c376775-e972-4047-885a-46e57a809d9f_0d1e9914-d0fb-4cae-ba49-c188df5f8972" id="Engage_FLOW2c376775-e972-4047-885a-46e57a809d9f_0d1e9914-d0fb-4cae-ba49-c188df5f8972">
+        <di:waypoint x="288" y="80" />
+        <di:waypoint x="372" y="80" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_2c376775-e972-4047-885a-46e57a809d9f" bpmnElement="NODE_2c376775-e972-4047-885a-46e57a809d9f">
+        <bpmndi:extension />
+        <dc:Bounds x="229" y="50" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW0d1e9914-d0fb-4cae-ba49-c188df5f8972_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" id="Engage_FLOW0d1e9914-d0fb-4cae-ba49-c188df5f8972_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb">
+        <di:waypoint x="428" y="80" />
+        <di:waypoint x="512" y="80" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_0d1e9914-d0fb-4cae-ba49-c188df5f8972" bpmnElement="NODE_0d1e9914-d0fb-4cae-ba49-c188df5f8972">
+        <bpmndi:extension />
+        <dc:Bounds x="370" y="50" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_3c58d451-237e-4855-8ccc-2421b4b198ea" id="Engage_FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_3c58d451-237e-4855-8ccc-2421b4b198ea">
+        <di:waypoint x="568" y="80" />
+        <di:waypoint x="652" y="80" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_1d15bd90-78d3-4b18-a0e9-0b3f5b899917" id="Engage_FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_1d15bd90-78d3-4b18-a0e9-0b3f5b899917">
+        <di:waypoint x="568" y="80" />
+        <di:waypoint x="589" y="80" />
+        <di:waypoint x="589" y="780" />
+        <di:waypoint x="652" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_4faae827-0fc3-466d-972b-ebfc5a546b7a" id="Engage_FLOWea35bb00-2cd0-4cd8-a848-a34bcac25bfb_4faae827-0fc3-466d-972b-ebfc5a546b7a">
+        <di:waypoint x="568" y="80" />
+        <di:waypoint x="589" y="80" />
+        <di:waypoint x="589" y="1060" />
+        <di:waypoint x="652" y="1060" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb" bpmnElement="NODE_ea35bb00-2cd0-4cd8-a848-a34bcac25bfb">
+        <bpmndi:extension />
+        <dc:Bounds x="510" y="50" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW3c58d451-237e-4855-8ccc-2421b4b198ea_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" id="Engage_FLOW3c58d451-237e-4855-8ccc-2421b4b198ea_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d">
+        <di:waypoint x="708" y="80" />
+        <di:waypoint x="792" y="80" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_3c58d451-237e-4855-8ccc-2421b4b198ea" bpmnElement="NODE_3c58d451-237e-4855-8ccc-2421b4b198ea">
+        <bpmndi:extension />
+        <dc:Bounds x="650" y="50" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_2df41ce3-574c-4db6-b3e2-d97bf6247152" id="Engage_FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_2df41ce3-574c-4db6-b3e2-d97bf6247152">
+        <di:waypoint x="848" y="80" />
+        <di:waypoint x="932" y="80" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_9abc0b53-2693-4c5e-a953-6c2a3005afbe" id="Engage_FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_9abc0b53-2693-4c5e-a953-6c2a3005afbe">
+        <di:waypoint x="848" y="80" />
+        <di:waypoint x="889" y="80" />
+        <di:waypoint x="889" y="220" />
+        <di:waypoint x="932" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_7fde6817-aa90-4bf6-ac4a-b10a2228348e" id="Engage_FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_7fde6817-aa90-4bf6-ac4a-b10a2228348e">
+        <di:waypoint x="848" y="80" />
+        <di:waypoint x="890" y="80" />
+        <di:waypoint x="890" y="360" />
+        <di:waypoint x="932" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_63a5e022-4e89-4772-8935-aee39688ea50" id="Engage_FLOWb2ce1a4d-70fc-4b9a-a644-f4b28f89d36d_63a5e022-4e89-4772-8935-aee39688ea50">
+        <di:waypoint x="848" y="80" />
+        <di:waypoint x="890" y="80" />
+        <di:waypoint x="890" y="500" />
+        <di:waypoint x="932" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d" bpmnElement="NODE_b2ce1a4d-70fc-4b9a-a644-f4b28f89d36d">
+        <bpmndi:extension />
+        <dc:Bounds x="790" y="50" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW2df41ce3-574c-4db6-b3e2-d97bf6247152_b7248248-2e28-467c-9a57-11d6f1cb4d0f" id="Engage_FLOW2df41ce3-574c-4db6-b3e2-d97bf6247152_b7248248-2e28-467c-9a57-11d6f1cb4d0f">
+        <di:waypoint x="988" y="80" />
+        <di:waypoint x="1072" y="80" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_2df41ce3-574c-4db6-b3e2-d97bf6247152" bpmnElement="NODE_2df41ce3-574c-4db6-b3e2-d97bf6247152">
+        <bpmndi:extension />
+        <dc:Bounds x="930" y="50" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW9abc0b53-2693-4c5e-a953-6c2a3005afbe_b7248248-2e28-467c-9a57-11d6f1cb4d0f" id="Engage_FLOW9abc0b53-2693-4c5e-a953-6c2a3005afbe_b7248248-2e28-467c-9a57-11d6f1cb4d0f">
+        <di:waypoint x="988" y="220" />
+        <di:waypoint x="1072" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_9abc0b53-2693-4c5e-a953-6c2a3005afbe" bpmnElement="NODE_9abc0b53-2693-4c5e-a953-6c2a3005afbe">
+        <bpmndi:extension />
+        <dc:Bounds x="930" y="190" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW7fde6817-aa90-4bf6-ac4a-b10a2228348e_b7248248-2e28-467c-9a57-11d6f1cb4d0f" id="Engage_FLOW7fde6817-aa90-4bf6-ac4a-b10a2228348e_b7248248-2e28-467c-9a57-11d6f1cb4d0f">
+        <di:waypoint x="988" y="360" />
+        <di:waypoint x="1072" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_7fde6817-aa90-4bf6-ac4a-b10a2228348e" bpmnElement="NODE_7fde6817-aa90-4bf6-ac4a-b10a2228348e">
+        <bpmndi:extension />
+        <dc:Bounds x="930" y="330" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW63a5e022-4e89-4772-8935-aee39688ea50_b7248248-2e28-467c-9a57-11d6f1cb4d0f" id="Engage_FLOW63a5e022-4e89-4772-8935-aee39688ea50_b7248248-2e28-467c-9a57-11d6f1cb4d0f">
+        <di:waypoint x="988" y="500" />
+        <di:waypoint x="1212" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_63a5e022-4e89-4772-8935-aee39688ea50" bpmnElement="NODE_63a5e022-4e89-4772-8935-aee39688ea50">
+        <bpmndi:extension />
+        <dc:Bounds x="930" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOWb7248248-2e28-467c-9a57-11d6f1cb4d0f_899421d3-978b-4763-a465-dbde6fb22ecd" id="Engage_FLOWb7248248-2e28-467c-9a57-11d6f1cb4d0f_899421d3-978b-4763-a465-dbde6fb22ecd">
+        <di:waypoint x="1267" y="500" />
+        <di:waypoint x="1352" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_b7248248-2e28-467c-9a57-11d6f1cb4d0f" bpmnElement="NODE_b7248248-2e28-467c-9a57-11d6f1cb4d0f">
+        <bpmndi:extension />
+        <dc:Bounds x="1209" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW899421d3-978b-4763-a465-dbde6fb22ecd_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" id="Engage_FLOW899421d3-978b-4763-a465-dbde6fb22ecd_83ab7d6f-febc-4dbb-bff2-e9c912e7268e">
+        <di:waypoint x="1407" y="500" />
+        <di:waypoint x="1632" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="FLOW899421d3-978b-4763-a465-dbde6fb22ecd_f5eb15e6-75f9-43fc-aa65-9b8f16872032" id="Engage_FLOW899421d3-978b-4763-a465-dbde6fb22ecd_f5eb15e6-75f9-43fc-aa65-9b8f16872032">
+        <di:waypoint x="1407" y="500" />
+        <di:waypoint x="1429" y="500" />
+        <di:waypoint x="1429" y="640" />
+        <di:waypoint x="1492" y="640" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_899421d3-978b-4763-a465-dbde6fb22ecd" bpmnElement="NODE_899421d3-978b-4763-a465-dbde6fb22ecd">
+        <bpmndi:extension />
+        <dc:Bounds x="1349" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW83ab7d6f-febc-4dbb-bff2-e9c912e7268e_d2496c21-1eaa-47ca-bae3-99ae4611ea11" id="Engage_FLOW83ab7d6f-febc-4dbb-bff2-e9c912e7268e_d2496c21-1eaa-47ca-bae3-99ae4611ea11">
+        <di:waypoint x="1687" y="500" />
+        <di:waypoint x="1772" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" bpmnElement="NODE_83ab7d6f-febc-4dbb-bff2-e9c912e7268e">
+        <bpmndi:extension />
+        <dc:Bounds x="1629" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOWd2496c21-1eaa-47ca-bae3-99ae4611ea11_784ff95d-04c5-4c79-b952-07ea7a9b3134" id="Engage_FLOWd2496c21-1eaa-47ca-bae3-99ae4611ea11_784ff95d-04c5-4c79-b952-07ea7a9b3134">
+        <di:waypoint x="1827" y="500" />
+        <di:waypoint x="1912" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_d2496c21-1eaa-47ca-bae3-99ae4611ea11" bpmnElement="NODE_d2496c21-1eaa-47ca-bae3-99ae4611ea11">
+        <bpmndi:extension />
+        <dc:Bounds x="1769" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW784ff95d-04c5-4c79-b952-07ea7a9b3134_3355b1ac-fe33-4287-8e56-1cef2bad4dec" id="Engage_FLOW784ff95d-04c5-4c79-b952-07ea7a9b3134_3355b1ac-fe33-4287-8e56-1cef2bad4dec">
+        <di:waypoint x="1967" y="500" />
+        <di:waypoint x="2052" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_784ff95d-04c5-4c79-b952-07ea7a9b3134" bpmnElement="NODE_784ff95d-04c5-4c79-b952-07ea7a9b3134">
+        <bpmndi:extension />
+        <dc:Bounds x="1909" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW3355b1ac-fe33-4287-8e56-1cef2bad4dec_7673971a-0c29-4b0a-a913-c96943c58898" id="Engage_FLOW3355b1ac-fe33-4287-8e56-1cef2bad4dec_7673971a-0c29-4b0a-a913-c96943c58898">
+        <di:waypoint x="2108" y="500" />
+        <di:waypoint x="2192" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_3355b1ac-fe33-4287-8e56-1cef2bad4dec" bpmnElement="NODE_3355b1ac-fe33-4287-8e56-1cef2bad4dec">
+        <bpmndi:extension />
+        <dc:Bounds x="2050" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW7673971a-0c29-4b0a-a913-c96943c58898_b0a0ebd6-04ff-47c4-b669-a2bb58bad056" id="Engage_FLOW7673971a-0c29-4b0a-a913-c96943c58898_b0a0ebd6-04ff-47c4-b669-a2bb58bad056">
+        <di:waypoint x="2248" y="500" />
+        <di:waypoint x="2332" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_7673971a-0c29-4b0a-a913-c96943c58898" bpmnElement="NODE_7673971a-0c29-4b0a-a913-c96943c58898">
+        <bpmndi:extension />
+        <dc:Bounds x="2190" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_b0a0ebd6-04ff-47c4-b669-a2bb58bad056" bpmnElement="NODE_b0a0ebd6-04ff-47c4-b669-a2bb58bad056">
+        <bpmndi:extension />
+        <dc:Bounds x="2330" y="470" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOWf5eb15e6-75f9-43fc-aa65-9b8f16872032_83ab7d6f-febc-4dbb-bff2-e9c912e7268e" id="Engage_FLOWf5eb15e6-75f9-43fc-aa65-9b8f16872032_83ab7d6f-febc-4dbb-bff2-e9c912e7268e">
+        <di:waypoint x="1547" y="640" />
+        <di:waypoint x="1632" y="640" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_f5eb15e6-75f9-43fc-aa65-9b8f16872032" bpmnElement="NODE_f5eb15e6-75f9-43fc-aa65-9b8f16872032">
+        <bpmndi:extension />
+        <dc:Bounds x="1489" y="610" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW1d15bd90-78d3-4b18-a0e9-0b3f5b899917_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9" id="Engage_FLOW1d15bd90-78d3-4b18-a0e9-0b3f5b899917_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9">
+        <di:waypoint x="708" y="780" />
+        <di:waypoint x="792" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_1d15bd90-78d3-4b18-a0e9-0b3f5b899917" bpmnElement="NODE_1d15bd90-78d3-4b18-a0e9-0b3f5b899917">
+        <bpmndi:extension />
+        <dc:Bounds x="650" y="750" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_8a09cf26-0375-4782-9f35-17ec05b14cfe" id="Engage_FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_8a09cf26-0375-4782-9f35-17ec05b14cfe">
+        <di:waypoint x="848" y="780" />
+        <di:waypoint x="932" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_d816a68b-346c-4455-946b-4e5d3e3a17ff" id="Engage_FLOW6c6724e2-5353-49fd-95ee-ce93e2b1e8c9_d816a68b-346c-4455-946b-4e5d3e3a17ff">
+        <di:waypoint x="848" y="780" />
+        <di:waypoint x="869" y="780" />
+        <di:waypoint x="869" y="920" />
+        <di:waypoint x="932" y="920" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9" bpmnElement="NODE_6c6724e2-5353-49fd-95ee-ce93e2b1e8c9">
+        <bpmndi:extension />
+        <dc:Bounds x="790" y="750" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW8a09cf26-0375-4782-9f35-17ec05b14cfe_d2496c21-1eaa-47ca-bae3-99ae4611ea11" id="Engage_FLOW8a09cf26-0375-4782-9f35-17ec05b14cfe_d2496c21-1eaa-47ca-bae3-99ae4611ea11">
+        <di:waypoint x="988" y="780" />
+        <di:waypoint x="1072" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_8a09cf26-0375-4782-9f35-17ec05b14cfe" bpmnElement="NODE_8a09cf26-0375-4782-9f35-17ec05b14cfe">
+        <bpmndi:extension />
+        <dc:Bounds x="930" y="750" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOWd816a68b-346c-4455-946b-4e5d3e3a17ff_9cd03841-3a89-41e4-b914-fca40909a247" id="Engage_FLOWd816a68b-346c-4455-946b-4e5d3e3a17ff_9cd03841-3a89-41e4-b914-fca40909a247">
+        <di:waypoint x="988" y="920" />
+        <di:waypoint x="1072" y="920" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_d816a68b-346c-4455-946b-4e5d3e3a17ff" bpmnElement="NODE_d816a68b-346c-4455-946b-4e5d3e3a17ff">
+        <bpmndi:extension />
+        <dc:Bounds x="930" y="890" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_9cd03841-3a89-41e4-b914-fca40909a247" bpmnElement="NODE_9cd03841-3a89-41e4-b914-fca40909a247">
+        <bpmndi:extension />
+        <dc:Bounds x="1070" y="890" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW4faae827-0fc3-466d-972b-ebfc5a546b7a_167309a4-4a34-4161-af7d-080ec7853ddc" id="Engage_FLOW4faae827-0fc3-466d-972b-ebfc5a546b7a_167309a4-4a34-4161-af7d-080ec7853ddc">
+        <di:waypoint x="708" y="1060" />
+        <di:waypoint x="792" y="1060" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_4faae827-0fc3-466d-972b-ebfc5a546b7a" bpmnElement="NODE_4faae827-0fc3-466d-972b-ebfc5a546b7a">
+        <bpmndi:extension />
+        <dc:Bounds x="650" y="1030" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW167309a4-4a34-4161-af7d-080ec7853ddc_41067522-5e34-4d95-bedb-598fcf4eb5b3" id="Engage_FLOW167309a4-4a34-4161-af7d-080ec7853ddc_41067522-5e34-4d95-bedb-598fcf4eb5b3">
+        <di:waypoint x="848" y="1060" />
+        <di:waypoint x="932" y="1060" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="FLOW167309a4-4a34-4161-af7d-080ec7853ddc_67692ce8-e32c-499a-8408-2c7bfee321ee" id="Engage_FLOW167309a4-4a34-4161-af7d-080ec7853ddc_67692ce8-e32c-499a-8408-2c7bfee321ee">
+        <di:waypoint x="848" y="1060" />
+        <di:waypoint x="869" y="1060" />
+        <di:waypoint x="869" y="1200" />
+        <di:waypoint x="932" y="1200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_167309a4-4a34-4161-af7d-080ec7853ddc" bpmnElement="NODE_167309a4-4a34-4161-af7d-080ec7853ddc">
+        <bpmndi:extension />
+        <dc:Bounds x="790" y="1030" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW41067522-5e34-4d95-bedb-598fcf4eb5b3_d2496c21-1eaa-47ca-bae3-99ae4611ea11" id="Engage_FLOW41067522-5e34-4d95-bedb-598fcf4eb5b3_d2496c21-1eaa-47ca-bae3-99ae4611ea11">
+        <di:waypoint x="988" y="1060" />
+        <di:waypoint x="1072" y="1060" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_41067522-5e34-4d95-bedb-598fcf4eb5b3" bpmnElement="NODE_41067522-5e34-4d95-bedb-598fcf4eb5b3">
+        <bpmndi:extension />
+        <dc:Bounds x="930" y="1030" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="FLOW67692ce8-e32c-499a-8408-2c7bfee321ee_4f3b53b1-7c35-454e-9514-241511f7c452" id="Engage_FLOW67692ce8-e32c-499a-8408-2c7bfee321ee_4f3b53b1-7c35-454e-9514-241511f7c452">
+        <di:waypoint x="988" y="1200" />
+        <di:waypoint x="1072" y="1200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_67692ce8-e32c-499a-8408-2c7bfee321ee" bpmnElement="NODE_67692ce8-e32c-499a-8408-2c7bfee321ee">
+        <bpmndi:extension />
+        <dc:Bounds x="930" y="1170" height="60" width="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_4f3b53b1-7c35-454e-9514-241511f7c452" bpmnElement="NODE_4f3b53b1-7c35-454e-9514-241511f7c452">
+        <bpmndi:extension />
+        <dc:Bounds x="1070" y="1170" height="60" width="60" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

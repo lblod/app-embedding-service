@@ -1,0 +1,78 @@
+{
+  "enable_raw_dsl_endpoint": true,
+  "eager_indexing_groups": [
+      [ { "name": "public", "variables" : [] } ],
+      [ { "name": "clean", "variables": [] } ]
+    ],
+    "default_settings" : {
+      "analysis": {
+        "analyzer": {
+          "dutchanalyzer": {
+            "tokenizer": "standard",
+            "filter": ["lowercase", "asciifolding", "dutchstemmer"]
+          }
+        },
+        "filter": {
+          "dutchstemmer": {
+            "type": "stemmer",
+            "name": "dutch"
+          }
+        }
+      }
+      },
+  "types": [
+    {
+      "type": "search-graph",
+      "on_path": "search-graphs",
+      "rdf_type": [
+        "http://deepsearch.com/search#Graph"
+      ],
+      "properties": {
+        "file": "http://deepsearch.com/search#filePath",
+        "data" : "http://deepsearch.com/search#data",
+        "embedding": {
+          "via" : "http://deepsearch.com/search#embedding",
+          "dense_vector": true
+        }
+      },
+      "mappings": {
+        "properties": {
+          "file": {
+            "type": "text"
+          },
+          "embedding": {
+            "type": "dense_vector",
+            "dims": 384,
+            "index": true,
+            "similarity": "cosine"
+          }
+        }
+      }
+    },
+    {
+      "type": "search-node",
+      "on_path": "search-nodes",
+      "rdf_type":"http://deepsearch.com/search#Node",
+      "properties": {
+        "name":  "http://deepsearch.com/search#name",
+        "embedding": {
+          "via" : "http://deepsearch.com/search#embedding",
+          "dense_vector": true
+        }
+      },
+      "mappings": {
+        "properties": {
+          "name": {
+            "type": "text"
+          },
+          "embedding": {
+            "type": "dense_vector",
+            "dims": 384,
+            "index": true,
+            "similarity": "cosine"
+          }
+        }
+      }
+    }
+  ]
+}

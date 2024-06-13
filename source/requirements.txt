@@ -1,0 +1,11 @@
+sentence-transformers
+protobuf
+KeyBERT
+matplotlib
+adjustText
+werkzeug
+python-multipart
+spektral
+networkx
+bs4
+nltk
