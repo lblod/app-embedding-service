@@ -77,7 +77,7 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "text": "string"
+  "text": "Dit is een voorbeeld van een zin die ik wil embedden via deze fantastische service!"
 }'
 
 
