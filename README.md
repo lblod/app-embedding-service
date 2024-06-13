@@ -1,6 +1,6 @@
 # app-embedding-service
  
-Backend for creating embeddings for BPMN files and text, based on the mu.semte.ch microservices stack.
+Backend for creating embeddings for BPMN files and text, leveraging advanced machine learning techniques to enhance search capabilities. Built on the mu.semte.ch microservices stack, this service combines lexical and semantic search to provide more accurate and meaningful search results.
 
 This repository is a [mu-project](https://github.com/mu-semtech/mu-project), it includes the minimal set of services required to run the openproceshuis.
 
@@ -51,6 +51,54 @@ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 ```
 
 You can shut down using `docker-compose stop` and remove everything using `docker-compose rm`.
+
+## Provided endpoints
+
+This project is build using the [lblod/mu-python-ml-fastapi-template](https://github.com/lblod/mu-python-ml-fastapi-template) and provides an interactive API documentation and exploration web user interface at `http://endpoint:2000/docs#/`. Here, all endpoints are documented and available for testing.
+
+Most important endpoints:
+
+* **POST /tasks/bpmn:** This endpoint accepts a `.bpmn` file, creates an embedding task, and returns a `task_uuid`. This `task_uuid` can be used to track the status and result of the embedding process.
+
+```
+curl -X 'POST' \
+  'http://localhost:2000/tasks/bpmn' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@Sport-Subsidieaanvraag-GrootstGemeneDeler_v0.3.bpmn'
+```
+
+* **POST /tasks/text:** This endpoint accepts a string of text, creates an embedding task, and returns a `task_uuid`. This `task_uuid` can be used to track the status and result of the embedding process.
+
+```
+
+curl -X 'POST' \
+  'http://localhost:2000/tasks/text' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "text": "string"
+}'
+
+
+```
+* **GET /tasks/{task_uuid}:** This endpoint retrieves the status and attributes of a task given its `task_uuid`. This allows users to check whether the embedding process is complete and to retrieve the resulting embeddings.
+
+```
+curl -X 'GET' \
+  'http://localhost:2000/tasks/b6480a3a-298e-11ef-a785-0242c0a80002' \
+  -H 'accept: application/json'
+```
+* **POST /search:** This endpoint encodes a given text into an embedding and performs a dense vector search in Elasticsearch to find semantically similar documents. 
+
+```
+curl -X 'POST' \
+  'http://localhost:2000/search' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '"geef mij een bpmn over rijbewijzen"'
+```
+
 
 ## Overview of services
 
