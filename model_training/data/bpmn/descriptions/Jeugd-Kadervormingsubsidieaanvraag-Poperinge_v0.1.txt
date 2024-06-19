@@ -1,0 +1,26 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen die zijn verdeeld over verschillende banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk sub-proces in het Nederlands, met aandacht voor de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### Sub-proces 1: Aanvraagproces
+**Baan:** Lane_0yge0ax
+1. **Start van het proces:** Het proces begint met een startevenement.
+2. **Indienen aanvraagformulier:** Een gebruikerstaak waarbij een aanvraagformulier wordt ingediend.
+3. **Aanvullen bewijzen kadervorming:** Na het indienen van het aanvraagformulier, als er aanvullende bewijzen nodig zijn voor de kadervorming, wordt deze taak uitgevoerd.
+
+### Sub-proces 2: Evaluatieproces
+**Baan:** Lane_0fpfr75
+1. **Evalueren aanvraagformulieren:** Een handmatige taak waarbij de ingediende aanvraagformulieren worden geëvalueerd.
+2. **Beslissingspunt - Compleet:** Een exclusieve gateway die controleert of de aanvraag compleet is. Indien ja, gaat het proces verder naar het berekenen van bedragen, indien nee, gaat het terug naar het aanvullen van bewijzen.
+3. **Berekenen bedragen:** Een zakelijke regeltaak waarbij de bedragen worden berekend op basis van de ingediende gegevens.
+4. **Op agenda plaatsen van CBS:** Een handmatige taak waarbij de aanvraag op de agenda van het CBS wordt geplaatst voor verdere evaluatie en goedkeuring.
+
+### Sub-proces 3: Goedkeuringsproces
+**Baan:** Lane_03on54b
+1. **Evaluatie en goedkeuring:** Een taak waarbij de aanvraag wordt geëvalueerd en al dan niet wordt goedgekeurd.
+2. **Beslissingspunt - Goedgekeurd:** Een exclusieve gateway die bepaalt of de aanvraag is goedgekeurd. Indien ja, gaat het proces verder naar het uitbetalen aan de jongere of vereniging, indien nee, gaat het terug naar het evalueren van de aanvraagformulieren.
+
+### Sub-proces 4: Uitbetalingsproces
+**Baan:** Lane_01e2b99
+1. **Uitbetalen aan jongere of vereniging:** Een gebruikerstaak waarbij de goedgekeurde bedragen worden uitbetaald aan de jongere of de vereniging.
+2. **Einde van het proces:** Het proces eindigt met een eindgebeurtenis nadat de betalingen zijn uitgevoerd.
+
+Elk van deze sub-processen is essentieel voor het beheer van aanvragen binnen de organisatie, van het indienen en evalueren van aanvragen tot de uiteindelijke goedkeuring en uitbetaling. De beslissingspunten (gateways) zorgen ervoor dat de aanvragen correct en volledig zijn voordat ze verder worden verwerkt, wat bijdraagt aan de efficiëntie en effectiviteit van het proces.

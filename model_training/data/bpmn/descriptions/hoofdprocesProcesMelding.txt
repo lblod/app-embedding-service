@@ -1,0 +1,30 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat een complex proces met meerdere sub-processen, taken, gebeurtenissen en beslissingspunten. Hieronder volgt een gedetailleerde beschrijving van elk sub-proces in het Nederlands, met de focus op de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### 1. Start van het Proces
+- **Start Event**: Het proces begint vanuit een startevent, getriggerd door een bericht of handmatige actie.
+- **Set Variabelen**: Direct na het starten worden belangrijke procesvariabelen ingesteld zoals contactinformatie en dossierdetails.
+
+### 2. Meldingsformulier Invullen
+- **Haal Logindata op**: Gebruikerslogingegevens worden opgehaald.
+- **Haal MAGDA gegevens op**: Persoonlijke gegevens worden opgehaald via de MAGDA-service.
+- **Vul Meldingsformulier in**: De gebruiker vult het meldingsformulier in, waarna het proces verder gaat naar een beslissingspunt.
+
+### 3. Beslissingspunt na Meldingsformulier
+- **Beslissingspunt**: Afhankelijk van de ingevulde gegevens in het meldingsformulier, kan het proces verschillende paden volgen, zoals directe afhandeling of verdere dataverificatie.
+
+### 4. Verwerking en Notificaties
+- **Verstuur Ontvangstbevestiging**: Een ontvangstbevestiging wordt naar de melder gestuurd.
+- **Verstuur Notificatie Nieuwe Melding**: Een notificatie van de nieuwe melding wordt naar de betrokken partijen gestuurd.
+
+### 5. Behandeling van de Melding
+- **Behandel Melding**: De melding wordt behandeld, wat kan leiden tot verschillende uitkomsten zoals acceptatie, afwijzing of herclassificatie.
+- **Eind Event**: Afhankelijk van de uitkomst van de behandeling, eindigt het proces of gaat het over naar een ander subproces voor verdere actie.
+
+### 6. Subprocessen voor Specifieke Scenario's
+- **Start Subproces Behandelingsdiensten**: Voor bepaalde meldingen kan een apart subproces gestart worden voor verdere behandeling door gespecialiseerde diensten.
+- **Pas Meldingsformulier Aan**: In sommige gevallen moet het meldingsformulier aangepast worden, wat kan leiden tot een herstart van het proces of een specifieke afhandeling.
+
+### 7. Afsluiting en Archivering
+- **Aanvraag Afgesloten**: Het proces wordt afgesloten en alle relevante gegevens worden gearchiveerd. Dit kan gepaard gaan met het versturen van een laatste notificatie naar de melder.
+
+Elk van deze subprocessen bevat gedetailleerde taken en beslissingspunten die zorgen voor een nauwkeurige afhandeling van de meldingen volgens de gestelde procedures. Het proces is ontworpen om flexibel te zijn en verschillende scenario's te kunnen afhandelen, afhankelijk van de specifieke eisen en gegevens van elke melding.

@@ -1,0 +1,24 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende subprocessen en taken die zijn verdeeld over meerdere banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk subprocess in het Nederlands, met aandacht voor de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### Subproces 1: Start van het proces
+- **Startgebeurtenis (Event_03ujqxw)**: Het proces begint met een startgebeurtenis die de initiële trigger voor het proces vormt.
+- **Taak "Subsidieaanvraag communicatie naar verenigingen" (Activity_1p7gbwy)**: Na de startgebeurtenis wordt een communicatie over de subsidieaanvraag naar de betrokken verenigingen gestuurd.
+
+### Subproces 2: Factuurverwerking
+- **Taak "Indienen facturen" (Activity_034qtmd)**: De verenigingen dienen hun facturen in.
+- **Taak "Evaluatie facturen" (Activity_1rbcl6h)**: De ingediende facturen worden geëvalueerd. Dit kan leiden tot een beslissingspunt.
+- **Exclusieve Gateway (Gateway_15449bc)**: Er wordt beslist of de informatie compleet is.
+  - Indien nee, gaat het proces naar "Aanvullen informatie/facturen" (Activity_0jsjhzf).
+  - Indien ja, gaat het proces naar "Berekenen bedragen" (Activity_1sdpo30).
+
+### Subproces 3: Besluitvorming en communicatie
+- **Taak "Bedragen op agenda plaatsen van CBS" (Activity_1p0s72m)**: De berekende bedragen worden op de agenda van het CBS geplaatst.
+- **Taak "Evaluatie en goedkeuring" (Activity_06d7dwp)**: De bedragen worden geëvalueerd en goedgekeurd.
+- **Taak "Verenigingen op de hoogte brengen van beslissing" (Activity_0hsdt5f)**: De verenigingen worden op de hoogte gebracht van de beslissing over hun subsidieaanvragen.
+- **Eindevent (Event_0dlqsmt)**: Het proces eindigt nadat de verenigingen zijn geïnformeerd.
+
+### Subproces 4: Uitbetaling
+- **Taak "Uitbetalen aan vereniging" (UserTask_0w0bppb)**: Na goedkeuring worden de bedragen uitbetaald aan de verenigingen.
+- **Eindevent (Event_0qv5ld3)**: Het proces van uitbetaling eindigt.
+
+Elk van deze subprocessen is essentieel voor het beheer van subsidieaanvragen en de communicatie met betrokken verenigingen. De beslissingspunten zorgen ervoor dat alleen volledige en correcte aanvragen verder worden verwerkt, wat de efficiëntie van het proces verhoogt.

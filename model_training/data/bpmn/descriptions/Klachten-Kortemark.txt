@@ -1,0 +1,38 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen die samen een complex proces vormen voor het behandelen van klachten en meldingen binnen een organisatie. Hieronder volgt een gedetailleerde beschrijving van elk sub-proces, gericht op de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### 1. Start van het proces
+- **StartEvent_1**: Het proces begint met een startevenement waarbij een klacht wordt ingediend.
+- **Activity_13ouyfg (Indienen webformulier klachten)**: De klager dient een klacht in via een webformulier.
+
+### 2. Evaluatie van de klacht
+- **Activity_02e0a29 (Evaluatie klacht)**: Na het indienen van de klacht wordt deze geëvalueerd om te bepalen of het een melding of een klacht betreft.
+- **Gateway_16s0eb3 (Is een melding of klacht?)**: Afhankelijk van de evaluatie wordt besloten of het proces verder gaat als een melding of als een klacht.
+
+### 3. Behandeling als melding
+- **Activity_19154ou (Behandel verder als melding)**: Als het een melding is, wordt deze verder behandeld volgens een specifiek subproces voor meldingen.
+- **Event_1wf0u5q**: Het subproces eindigt met een eindgebeurtenis.
+
+### 4. Registratie en verdere behandeling van de klacht
+- **Activity_0dsk5lq (Klacht registreren in klachtenregister)**: Als het een klacht is, wordt deze geregistreerd in het klachtenregister.
+- **Activity_0rykv92 (Klacht registreren in e-bestuur)**: De klacht wordt ook geregistreerd in een elektronisch bestuurssysteem.
+- **Gateway_0agv90p (Klacht ontvankelijk)**: Er wordt bepaald of de klacht ontvankelijk is.
+- **Activity_1sss3wd (Versturen onontvankelijkheid en redenen naar melder)**: Als de klacht niet ontvankelijk is, worden de redenen naar de melder verstuurd.
+- **Event_0rtldmo**: Het subproces eindigt met een eindgebeurtenis als de klacht niet ontvankelijk is.
+
+### 5. Verdere afhandeling van een ontvankelijke klacht
+- **Gateway_0bkydwh (Van wie is klacht en over wie?)**: Afhankelijk van over wie de klacht gaat, wordt een passende klachtenbehandelaar aangewezen.
+- **Activity_07yd6vn, Activity_1jzf7dr, Activity_14eaj22**: Afhankelijk van de aard van de klacht wordt een diensthoofd, de algemeen directeur of het college van burgemeester en schepenen aangewezen als klachtenbehandelaar.
+- **Activity_0qbfin9 (Klacht doorsturen naar klachtenbehandelaar)**: De klacht wordt doorgestuurd naar de aangewezen klachtenbehandelaar.
+
+### 6. Onderzoek en afhandeling door de klachtenbehandelaar
+- **Activity_15y3jnq (Onderzoeken klacht)**: De klachtenbehandelaar onderzoekt de klacht.
+- **Activity_0f2yk70 (Verslag opmaken)**: Er wordt een verslag opgemaakt van het onderzoek.
+- **Event_1h9nxt0 (Binnen 20 dagen na doorgeven klacht)**: Binnen 20 dagen moet het verslag klaar zijn en doorgestuurd worden naar de klachtencoördinator.
+- **Activity_1umijcc (Verslag sturen naar klachtencoördinator)**: Het verslag wordt naar de klachtencoördinator gestuurd.
+- **Activity_1hnvlcl (Antwoord op klacht behandelen)**: Het antwoord op de klacht wordt behandeld.
+- **Activity_1dj5fjh (Opstellen brief met antwoord op klacht)**: Er wordt een brief opgesteld met het antwoord op de klacht.
+- **Event_0y4hste (Binnen 5 werkdagen na ontvangen eindverslag)**: Binnen 5 werkdagen na het ontvangen van het eindverslag moet de brief verstuurd zijn.
+- **Activity_05bg88f (Versturen brief met antwoord op klacht)**: De brief met het antwoord op de klacht wordt verstuurd.
+- **Event_1sh8q78**: Het subproces eindigt met een eindgebeurtenis.
+
+Dit proces zorgt ervoor dat klachten en meldingen systematisch en efficiënt worden behandeld, waarbij elke stap zorgvuldig wordt gedocumenteerd en gevolgd, van ontvangst tot afhandeling.

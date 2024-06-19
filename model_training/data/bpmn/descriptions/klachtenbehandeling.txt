@@ -1,0 +1,27 @@
+Het proces "Klachtenbehandeling (19)" is een uitgebreid proces dat verschillende stappen en besluitvormingspunten omvat om klachten van burgers effectief te behandelen. Hier is een gedetailleerde beschrijving van de belangrijkste subprocessen en activiteiten:
+
+1. **Start van het Proces**:
+   - Een klant (burger) dient een klacht in via verschillende kanalen zoals e-mail, digitaal formulier, of fysieke brief. De klacht kan betrekking hebben op verschillende aspecten van de gemeentelijke dienstverlening.
+
+2. **Bepalen van de Aard van de Klacht**:
+   - De klacht wordt geanalyseerd om te bepalen of het daadwerkelijk een klacht is, een verzoek om informatie, een melding, of iets anders. Afhankelijk van de aard van de klacht wordt deze doorgeleid naar de juiste procedure of afdeling.
+
+3. **Registratie en Communicatie**:
+   - De klacht wordt geregistreerd in het CRM-systeem. De klager ontvangt een bevestiging van de ontvangst van de klacht met een uniek klachtnummer voor verdere referentie.
+
+4. **Toewijzing aan Verantwoordelijke**:
+   - Afhankelijk van de inhoud van de klacht wordt deze toegewezen aan de relevante afdeling of persoon binnen de gemeente die verantwoordelijk is voor het behandelen van de klacht.
+
+5. **Onderzoek en Actie**:
+   - De toegewezen afdeling onderzoekt de klacht grondig. Dit kan inhouden dat er extra informatie wordt verzameld, betrokken partijen worden geïnterviewd, en relevante documentatie wordt beoordeeld.
+
+6. **Oplossing en Feedback**:
+   - Na het onderzoek wordt een oplossing voorgesteld en geïmplementeerd. De klager wordt geïnformeerd over de genomen acties en de oplossing van de klacht.
+
+7. **Afsluiting van de Klacht**:
+   - Zodra de klacht naar tevredenheid is opgelost, wordt deze afgesloten in het CRM-systeem. Er wordt een laatste communicatie naar de klager gestuurd ter bevestiging van de afsluiting van de klacht.
+
+8. **Evaluatie en Verbetering**:
+   - Periodiek worden de klachten geëvalueerd om patronen of veelvoorkomende problemen te identificeren. Dit helpt bij het verbeteren van de processen en diensten van de gemeente.
+
+Dit proces zorgt ervoor dat klachten van burgers systematisch en efficiënt worden behandeld, en draagt bij aan de verbetering van de gemeentelijke dienstverlening en de tevredenheid van de burgers.

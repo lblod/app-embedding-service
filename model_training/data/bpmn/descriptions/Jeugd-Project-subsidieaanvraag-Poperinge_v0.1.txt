@@ -1,0 +1,33 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen die zijn verdeeld over meerdere banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk sub-proces in het Nederlands, gericht op de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### Sub-proces 1: Aanvraagproces
+**Baan:** Lane_0yge0ax
+1. **Start van het proces:** Het proces begint een maand voor het project met een startgebeurtenis ("1 maand voor het project").
+2. **Taak:** Een gebruiker vult het aanvraagformulier in ("Invullen aanvraagformulier").
+3. **Taak:** Na het invullen van het aanvraagformulier wordt de aanvraag geëvalueerd ("Evaluatie aanvraag").
+4. **Gebeurtenis:** Een maand na het project of uiterlijk op 30 november moet een tussenliggende gebeurtenis plaatsvinden.
+5. **Taak:** Verantwoordingsstukken worden ingediend ("Indienen verantwoordingsstukken").
+
+### Sub-proces 2: Evaluatie en goedkeuring
+**Baan:** Lane_0fpfr75
+1. **Taak:** Verantwoordingsstukken worden geëvalueerd ("Evaluatie verantwoordingsstukken").
+2. **Beslissingspunt:** Er wordt gecontroleerd of de verantwoordingsstukken compleet zijn ("Compleet?").
+   - **Ja:** Gaat door naar het volgende beslissingspunt.
+   - **Nee:** Informatie in de verantwoordingsstukken moet worden aangevuld ("Aanvullen informatie verantwoordingsstukken"), waarna de stukken opnieuw worden geëvalueerd.
+3. **Beslissingspunt:** Er wordt gecontroleerd op onduidelijkheden ("Zijn er onduidelijkheden?").
+   - **Ja:** Onduidelijkheden worden geëvalueerd ("Evaluatie onduidelijkheden").
+   - **Nee:** Totalen per organisator worden berekend ("Berekenen totalen per organisator").
+
+### Sub-proces 3: Afhandeling en communicatie
+**Baan:** Lane_03on54b
+1. **Taak:** De berekende totalen worden op de agenda van het CBS geplaatst ("Op agenda plaatsen van CBS").
+2. **Taak:** Evaluatie en goedkeuring van de agenda-items ("Evaluatie en goedkeuring").
+3. **Beslissingspunt:** Er wordt gecontroleerd of de agenda-items zijn goedgekeurd ("Goedgekeurd?").
+   - **Ja:** Betaling aan de organisator wordt uitgevoerd ("Uitbetalen aan organisator").
+   - **Nee:** De organisator wordt op de hoogte gebracht van de situatie ("Organisator op de hoogte brengen").
+
+### Sub-proces 4: Afsluiting
+**Baan:** Lane_01e2b99
+1. **Einde van het proces:** Na de uitbetaling aan de organisator of het op de hoogte brengen van de organisator, eindigt het proces met een eindgebeurtenis.
+
+Elk van deze sub-processen is zorgvuldig ontworpen om de stroom van activiteiten en beslissingen binnen het grotere proces te beheren, waarbij elke taak en gebeurtenis bijdraagt aan het uiteindelijke doel van het proces.

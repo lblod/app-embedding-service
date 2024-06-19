@@ -1,0 +1,36 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen en taken die zijn verdeeld over meerdere banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk sub-proces, gericht op de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### 1. Indienen en Evaluatie van Klachten
+- **Start**: Het proces begint met een startevenement waarbij een klacht wordt ingediend via een webformulier.
+- **Taak**: De gebruiker vult het webformulier in ("Indienen webformulier klachten").
+- **Taak**: Vervolgens wordt de klacht geëvalueerd ("Evaluatie klacht").
+- **Beslissingspunt**: Een exclusieve gateway bepaalt of het om een melding of een klacht gaat ("Is een melding of klacht?").
+  - **Melding**: Indien het een melding is, wordt het proces voortgezet als een melding.
+  - **Klacht**: Indien het een klacht is, wordt de klacht geregistreerd in het klachtenregister ("Klacht registreren in klachtenregister").
+
+### 2. Behandeling van Klachten
+- **Beslissingspunt**: Een andere exclusieve gateway bepaalt of de klacht ontvankelijk is ("Klacht ontvankelijk").
+  - **Ja**: Indien ja, wordt een ontvangstbevestiging van de klacht verstuurd ("Verstuur ontvangstmelding klacht").
+  - **Nee**: Indien nee, wordt binnen 10 dagen na registratie een onontvankelijkheidsmelding verstuurd naar de melder ("Versturen onontvankelijkheid en redenen naar melder").
+  - **Onduidelijk**: Indien de klacht onduidelijk is, wordt om verduidelijking gevraagd ("Vraag om verduidelijking klacht").
+- **Taak**: De informatie van de klacht wordt aangevuld ("Aanvullen informatie klacht").
+
+### 3. Verdere Afhandeling en Besluitvorming
+- **Beslissingspunt**: Een gateway bepaalt of de klacht over een diensthoofd gaat ("Klacht is over een diensthoofd?").
+  - **Ja**: De algemeen directeur wordt aangewezen als klachtenbehandelaar ("Algemeen directeur aanduiden als klachtenbehandelaar").
+  - **Nee**: Het diensthoofd wordt aangewezen als klachtenbehandelaar ("Diensthoofd aanduiden als klachtenbehandelaar").
+- **Taak**: De klacht wordt doorgestuurd naar de klachtenbehandelaar ("Klacht doorsturen naar klachtenbehandelaar").
+- **Taak**: De klacht wordt onderzocht ("Onderzoeken klacht").
+- **Taak**: Een antwoord op de klacht wordt geformuleerd ("Antwoord formuleren").
+- **Gebeurtenis**: Binnen 14 dagen na het doorgeven van de klacht moet er een antwoord zijn ("Binnen 14 dagen na doorgeven klacht").
+
+### 4. Afronding
+- **Taak**: Het antwoord op de klacht wordt behandeld ("Antwoord op klacht behandelen").
+- **Beslissingspunt**: Een gateway bepaalt of de klacht tegen een persoon is ("Klacht tegen persoon?").
+  - **Ja**: Binnen 14 dagen na ontvangst van het antwoord wordt er actie ondernomen ("Binnen 14 dagen na ontvangst antwoord").
+  - **Nee**: Een brief met het antwoord op de klacht wordt opgesteld ("Opstellen brief met antwoord op klacht").
+- **Taak**: De brief met het antwoord op de klacht wordt ondertekend ("Ondertekenen brief met antwoord op klacht").
+- **Taak**: De brief wordt verstuurd ("Versturen brief met antwoord op klacht").
+- **Gebeurtenis**: Maximaal 45 dagen na de start van de behandeling van de klacht wordt de brief verstuurd ("Maximaal 45 dagen na start behandeling klacht").
+
+Elk van deze sub-processen draagt bij aan een gestructureerde afhandeling van klachten binnen de organisatie, waarbij duidelijke beslissingspunten en taken zijn gedefinieerd om te zorgen voor een efficiënte en effectieve verwerking.

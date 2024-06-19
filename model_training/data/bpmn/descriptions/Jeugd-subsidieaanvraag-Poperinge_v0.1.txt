@@ -1,0 +1,33 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen die zijn verdeeld over meerdere banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk sub-proces, gericht op de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### Sub-proces 1: Start en Communicatie Subsidieaanvraag
+- **StartEvent (StartEvent_020hdqw)**: Het proces begint met een startevenement.
+- **SendTask (Activity_1c3d5wv, "Subsidieaanvraag communicatie naar verenigingen")**: Na het startevenement wordt een communicatie naar verenigingen gestuurd over de subsidieaanvraag.
+
+### Sub-proces 2: Evaluatie en Besluitvorming
+- **ManualTask (Activity_1rbcl6h, "Evalueren vereniging dossier/subsidie")**: De subsidieaanvragen worden geëvalueerd.
+- **ExclusiveGateway (Gateway_1jv3xum, "Compleet")**: Er wordt besloten of de informatie compleet is.
+  - **Ja**: Gaat naar Task_0g7p5xc, "Evaluatie onduidelijkheden en toegekende bedragen".
+  - **Nee**: Gaat naar UserTask (Activity_1r7w29n, "Aanvullen informatie vereniging/dossier/subsidie").
+
+### Sub-proces 3: Verwerking en Goedkeuring
+- **ManualTask (Activity_06d7dwp, "Evaluatie en goedkeuring")**: De volledigheid van de dossiers wordt geëvalueerd en goedgekeurd.
+- **ExclusiveGateway (Gateway_11etuxr, "Goedgekeurd?")**: Beslissing of de subsidie wordt goedgekeurd.
+  - **Ja**: Gaat naar UserTask (Activity_180syoq, "Uitbetalen aan vereniging").
+  - **Nee**: Gaat terug naar ManualTask (Activity_1rbcl6h, "Evalueren vereniging dossier/subsidie").
+
+### Sub-proces 4: Uitbetaling en Afsluiting
+- **UserTask (Activity_180syoq, "Uitbetalen aan vereniging")**: De goedgekeurde subsidies worden uitbetaald aan de verenigingen.
+- **EndEvent (EndEvent_0t5hapu)**: Het proces eindigt na de uitbetaling.
+
+### Sub-proces 5: Informatie Aanvulling en Notificatie
+- **UserTask (Activity_034qtmd, "Invullen werkingssubsidie")**: Informatie over de werkingssubsidie wordt ingevuld.
+- **SendTask (Activity_0hsdt5f, "Vereniging op de hoogte brengen")**: De vereniging wordt op de hoogte gebracht van de beslissing.
+- **EndEvent (EndEvent_1t9fyic)**: Het proces eindigt na de notificatie.
+
+### Sub-proces 6: Berekening en Agenda Plaatsing
+- **Task (Task_0g7p5xc, "Evaluatie onduidelijkheden en toegekende bedragen")**: Onduidelijkheden en toegekende bedragen worden geëvalueerd.
+- **BusinessRuleTask (Activity_1alfwiw, "Berekenen totalen per vereniging")**: Totalen per vereniging worden berekend.
+- **ManualTask (ManualTask_0hs58qz, "Op agenda plaatsen van CBS")**: De resultaten worden op de agenda van het CBS geplaatst.
+
+Elk van deze sub-processen draagt bij aan het algehele doel van het beheren en toewijzen van subsidies aan verenigingen, waarbij elke stap zorgt voor de juiste evaluatie, besluitvorming en communicatie.

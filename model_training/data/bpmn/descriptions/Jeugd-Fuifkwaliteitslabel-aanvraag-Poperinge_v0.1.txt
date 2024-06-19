@@ -1,0 +1,37 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen die zijn verdeeld over meerdere banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk sub-proces in het Nederlands, met de focus op de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### Sub-proces 1: Aanvraagproces
+**Baan:** Lane_0yge0ax
+1. **StartEvent_020hdqw ("1 maand voor de fuif")** - Dit start het proces een maand voor het evenement.
+2. **Activity_034qtmd ("Invullen aanvraagformulier")** - De gebruiker vult het aanvraagformulier in.
+3. **Activity_1rbcl6h ("Evaluatie aanvraag")** - De aanvraag wordt geëvalueerd.
+4. **Event_10ua67r ("Uiterlijk 31 augustus")** - Een tijdsgebonden gebeurtenis die plaatsvindt op 31 augustus.
+5. **Activity_1aiafag ("Invullen evaluatieformulier")** - Het evaluatieformulier wordt ingevuld na de gebeurtenis.
+6. **Activity_0vw7alm ("Evaluatie verantwoordingsstukken")** - De verantwoordingsstukken worden geëvalueerd.
+
+### Sub-proces 2: Beslissingsproces
+**Baan:** Lane_1j0reiu
+1. **Gateway_1jv3xum ("Compleet?")** - Beslissingspunt waar wordt gecontroleerd of alle informatie compleet is.
+   - **Ja:** Gaat verder met de volgende taak.
+   - **Nee:** Leidt naar een taak in een andere baan om informatie aan te vullen.
+2. **Activity_1alfwiw ("Berekenen punten en rangschikking maken")** - Punten worden berekend en een rangschikking wordt gemaakt als de informatie compleet is.
+
+### Sub-proces 3: Goedkeuringsproces
+**Baan:** Lane_03on54b
+1. **ManualTask_0hs58qz ("Op agenda plaatsen van CBS")** - De informatie wordt op de agenda van het CBS geplaatst.
+2. **Activity_06d7dwp ("Evaluatie en goedkeuring")** - De aanvraag wordt geëvalueerd en goedgekeurd.
+3. **Gateway_11etuxr ("Goedgekeurd?")** - Beslissingspunt of de aanvraag is goedgekeurd.
+   - **Ja:** Gaat verder met uitbetalen.
+   - **Nee:** Informeert de organisatoren.
+
+### Sub-proces 4: Afhandelingsproces
+**Baan:** Lane_01e2b99
+1. **Activity_180syoq ("Uitbetalen aan organisatoren")** - Betalingen worden uitgevoerd aan de organisatoren.
+2. **EndEvent_0t5hapu** - Het proces eindigt na de uitbetaling.
+
+### Sub-proces 5: Communicatieproces
+**Baan:** Lane_0fpfr75
+1. **Activity_0hsdt5f ("Organisatoren op de hoogte brengen")** - Organisatoren worden op de hoogte gebracht van de beslissing.
+2. **EndEvent_1t9fyic** - Het proces eindigt na de communicatie.
+
+Elk van deze sub-processen draagt bij aan het algehele doel van het beheren van aanvragen en het organiseren van evenementen, waarbij verschillende afdelingen en rollen betrokken zijn om de taken efficiënt uit te voeren.

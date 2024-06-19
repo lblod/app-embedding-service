@@ -1,0 +1,28 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen die zijn verdeeld over meerdere banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk sub-proces in het Nederlands, gericht op de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### Sub-proces 1: Meldingsbehandeling via Telefoon en Mail
+1. **Start van het proces**: Het proces begint met een startevent waarbij een melding binnenkomt.
+2. **Evaluatie van de melding via telefoon**: Een medewerker evalueert de telefonische melding.
+3. **Beslissing doorverbinden**: Na evaluatie beslist een gateway of de oproep wordt doorverbonden.
+   - **Ja**: De oproep wordt doorverbonden en er wordt een taak uitgevoerd om de melding telefonisch te evalueren.
+   - **Nee**: Er wordt een notitie genomen van de melding en het telefoonnummer van de melder.
+4. **Evaluatie van de melding via mail**: Parallel aan de telefoon wordt een melding via mail geëvalueerd.
+5. **Doorsturen van de melding**: De melding wordt doorgestuurd naar de desbetreffende dienst, ongeacht of deze via telefoon of mail binnenkwam.
+
+### Sub-proces 2: Afhandeling en Communicatie
+1. **Evaluatie van de melding door specifieke dienst**: De ontvangen melding wordt geëvalueerd door de betreffende dienst.
+2. **Beslissing werkopdracht nodig**: Een gateway bepaalt of een werkopdracht nodig is.
+   - **Ja**: Er wordt een werkopdracht gemaakt en communicatie naar de burger gestuurd dat de melding wordt opgepakt.
+   - **Nee**: De melding wordt direct behandeld door de dienst.
+3. **Uitvoering en afsluiting van de werkopdracht**: Na communicatie wordt de werkopdracht uitgevoerd en afgesloten.
+
+### Sub-proces 3: Behandeling van Meldingen via Sociale Media
+1. **Periodieke controle van berichten**: Periodiek worden berichten op de Facebookpagina van de gemeente gescand.
+2. **Evaluatie van Facebookberichten**: Facebookberichten worden geëvalueerd.
+3. **Doorsturen van Facebookbericht**: Indien relevant wordt het bericht doorgestuurd naar de desbetreffende dienst.
+4. **Opvragen van status via Facebook**: Na een bepaalde tijd wordt de status van de melding opgevraagd bij de dienst.
+5. **Beslissing opgelost**: Een gateway bepaalt of de melding is opgelost.
+   - **Ja**: Er wordt een reactie geplaatst op Facebook.
+   - **Nee**: Er wordt gewacht en mogelijk opnieuw status opgevraagd.
+
+Elk van deze sub-processen is ontworpen om efficiënt om te gaan met verschillende soorten binnenkomende meldingen en zorgt voor een gestructureerde afhandeling en communicatie met de burger. De beslissingspunten (gateways) zorgen ervoor dat afhankelijk van de situatie de juiste stappen worden ondernomen.

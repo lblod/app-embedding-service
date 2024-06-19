@@ -1,0 +1,30 @@
+Het BPMN-proces beschreven in het XML-bestand omvat verschillende sub-processen die samenwerken om de verzending van goederen in een computerhardwarewinkel te beheren. Hieronder volgt een gedetailleerde beschrijving van elk sub-proces, gericht op de volgorde van taken, beslissingspunten en sleutelactiviteiten en -gebeurtenissen:
+
+### 1. Start van het verzendproces
+- **Startgebeurtenis**: Het proces begint met een startgebeurtenis genaamd "Ship goods", wat aangeeft dat het verzendproces van goederen is geïnitieerd.
+
+### 2. Verzendmethode bepalen
+- **Taak**: "Clarify shipment method" - De secretaresse bepaalt de verzendmethode.
+- **Beslissingspunt**: "Special handling?" - Een exclusieve gateway bepaalt of speciale afhandeling nodig is. Afhankelijk van de uitkomst worden verschillende paden gevolgd:
+  - **Ja**: Ga verder met het verkrijgen van offertes van logistieke bedrijven.
+  - **Nee**: Ga verder met het verzekeren van het pakket indien nodig.
+
+### 3. Offertes verkrijgen en logistiek bedrijf selecteren
+- **Taak**: "Get 3 offers from logistic companies" - Als speciale afhandeling nodig is, worden offertes van verschillende logistieke bedrijven opgevraagd.
+- **Taak**: "Select logistic company and place order" - Na het ontvangen van de offertes wordt een logistiek bedrijf geselecteerd en wordt een bestelling geplaatst.
+
+### 4. Verpakken en voorbereiden van goederen
+- **Parallelle taken**: 
+  - **Taak**: "Package goods" - In het magazijn worden de goederen verpakt.
+  - **Taak**: "Write package label" - Tegelijkertijd wordt een pakketlabel geschreven door de secretaresse.
+- **Inclusieve Gateway**: Beide taken komen samen bij een inclusieve gateway, wat betekent dat het proces doorgaat zodra beide taken zijn voltooid.
+
+### 5. Verzekering en afronding
+- **Beslissingspunt**: Na de inclusieve gateway wordt bepaald of het pakket verzekerd moet worden ("Insure parcel").
+- **Exclusieve Gateway**: Een volgende exclusieve gateway bepaalt de volgende stappen na het verzekeren en labelen van het pakket.
+
+### 6. Voorbereiding voor ophalen
+- **Taak**: "Prepare for picking up goods" - De laatste voorbereidingen worden getroffen om de goederen klaar te maken voor ophalen.
+- **Eindevent**: "Shipment prepared" - Het proces eindigt wanneer de goederen klaar zijn voor verzending.
+
+Elk van deze sub-processen is zorgvuldig georganiseerd om een efficiënte en effectieve afhandeling van de verzending van goederen te waarborgen. De beslissingspunten binnen het proces zorgen ervoor dat afhankelijk van de situatie de juiste stappen worden genomen, wat bijdraagt aan de flexibiliteit en aanpasbaarheid van het proces.

@@ -1,0 +1,30 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen, elk met specifieke taken, beslissingspunten en sleutelactiviteiten. Hieronder volgt een gedetailleerde beschrijving van enkele belangrijke sub-processen in het Nederlands:
+
+### 1. Meldingsproces
+Dit sub-proces begint met een startevenement en omvat verschillende manieren waarop een melding kan worden ingediend:
+- **Invullen meldingsformulier op website**: De gebruiker vult een formulier in op de website. Dit is de start van het proces na het startevenement.
+- **Telefoon naar onthaal**: Een alternatieve route waarbij de melder telefonisch contact opneemt.
+- **Mail naar info@**: Nog een alternatieve route waarbij de melder een e-mail stuurt.
+- **Melding aan het loket**: Een persoonlijke manier waarop een melding kan worden gedaan bij een fysiek loket.
+
+Elk van deze invoerwegen leidt tot een evaluatie van de melding, waarbij besloten wordt of de melding voor een andere instantie is bedoeld.
+
+### 2. Evaluatie en Routing
+Na de initiële melding worden de volgende stappen ondernomen:
+- **Evaluatie melding mail/loket/telefoon**: Afhankelijk van de invoermethode wordt de melding geëvalueerd.
+- **Beslissingspunt 'Melding is zeker voor andere instantie?'**: Hier wordt besloten of de melding moet worden doorgezet naar een andere instantie.
+- **Routing van de melding**: Afhankelijk van de beslissing wordt de melding doorgegeven aan de juiste instantie of geregistreerd in het systeem voor verdere verwerking.
+
+### 3. Verwerking en Afhandeling
+Na de evaluatie en eventuele registratie in het systeem volgen verdere stappen:
+- **Bestaat de melding al in 3P?**: Controle of de melding al bekend is in het systeem.
+- **Melding registreren in 3P**: Als de melding nieuw is, wordt deze geregistreerd.
+- **Melding doorgeven aan andere instantie**: Als besloten is dat de melding voor een andere instantie is, wordt deze doorgegeven.
+
+### 4. Afsluiting en Notificatie
+Aan het einde van het proces zijn er verschillende afsluitende taken:
+- **Notificatie naar melder dat werkopdracht afgerond is**: De melder wordt geïnformeerd over de afronding van de werkzaamheden.
+- **Notificatie niet terechte melding naar melder met reden**: Als een melding niet terecht was, wordt de melder hiervan op de hoogte gesteld met de reden.
+- **Uitvoering werkopdracht**: De daadwerkelijke uitvoering van de werkzaamheden indien de melding terecht was.
+
+Elk van deze subprocessen bevat specifieke taken die zijn ontworpen om de workflow van meldingen efficiënt te beheren, van ontvangst tot afhandeling. Elk beslissingspunt zorgt ervoor dat de melding correct wordt gerouteerd en verwerkt volgens de vastgestelde procedures.

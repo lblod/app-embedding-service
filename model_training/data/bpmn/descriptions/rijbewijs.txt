@@ -1,0 +1,29 @@
+Het BPMN-proces "Aanvraag rijbewijs" bestaat uit verschillende sub-processen die betrekking hebben op de aanvraag, verwerking en uitgifte van verschillende soorten rijbewijzen. Hieronder volgt een gedetailleerde beschrijving van elk sub-proces in het Nederlands:
+
+1. **Start van de aanvraag**: Een inwoner dient een aanvraag in voor een rijbewijs. Dit is het startpunt van het proces.
+
+2. **Wetgeving controleren**: De medewerker van Burgerzaken controleert de relevante wetgeving met betrekking tot het aangevraagde rijbewijs. Dit omvat zowel nationale als internationale wetgeving.
+
+3. **Tijdelijk verval van recht tot sturen**: Indien de aanvrager tijdelijk geen recht heeft om te sturen, worden de nodige documenten gecontroleerd en verwerkt. Dit kan invloed hebben op de soort aanvraag die gedaan kan worden.
+
+4. **Beslissingstype rijbewijs**: Afhankelijk van de situatie van de aanvrager wordt bepaald welk type rijbewijs aangevraagd wordt (bijvoorbeeld voorlopig, internationaal, etc.).
+
+5. **Voorlopig rijbewijs**: Als besloten wordt dat een voorlopig rijbewijs nodig is, worden de specifieke voorwaarden en documenten voor dit type rijbewijs verwerkt.
+
+6. **Categorie bepalen**: Afhankelijk van de categorie waarvoor het rijbewijs wordt aangevraagd, worden verschillende procedures gevolgd (bijvoorbeeld categorie B, C, etc.).
+
+7. **Melding aan burger**: De burger wordt geïnformeerd over de status van de aanvraag en wanneer het rijbewijs klaar zal zijn.
+
+8. **Controle volledigheid aanvraag**: Voordat het rijbewijs wordt uitgegeven, wordt gecontroleerd of alle benodigde documenten aanwezig zijn en correct zijn ingevuld.
+
+9. **Opmaak voorlopig rijbewijs**: Als alles in orde is, wordt het voorlopig rijbewijs opgemaakt.
+
+10. **Klaarmaken mapje voor balie**: Het rijbewijs wordt voorbereid voor afhaling door de burger.
+
+11. **Breng de burger op de hoogte**: De burger wordt op de hoogte gebracht dat het rijbewijs kan worden opgehaald.
+
+12. **Aflevering document**: Bij het afhalen van het rijbewijs worden de laatste controles uitgevoerd en wordt het document officieel overhandigd.
+
+13. **Afhandeling**: Na de afhaling worden alle documenten gearchiveerd en wordt het proces afgerond.
+
+Elk van deze stappen zorgt ervoor dat de aanvraag van een rijbewijs zorgvuldig wordt behandeld en voldoet aan alle wettelijke eisen.

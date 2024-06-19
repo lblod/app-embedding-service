@@ -1,0 +1,35 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende sub-processen die zijn verdeeld over meerdere banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk sub-proces in het Nederlands, met aandacht voor de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### Sub-proces 1: Start en Communicatie Subsidieaanvraag
+- **StartEvent_020hdqw**: Het proces begint met een startevenement.
+- **Activity_1c3d5wv**: Een communicatietask waarbij een subsidieaanvraag naar de vereniging wordt gestuurd.
+- **Activity_034qtmd**: Een gebruikerstaak waarbij de werkingssubsidie wordt ingevuld.
+- **Gateway_0thyowe**: Een beslissingspunt dat bepaalt of er met jeugd wordt gewerkt.
+  - Ja: Gaat naar **Activity_033151x** waar de impulssubsidie wordt ingevuld.
+  - Nee: Gaat naar **Activity_1rbcl6h** voor evaluatie van het verenigingsdossier.
+
+### Sub-proces 2: Evaluatie en Besluitvorming
+- **Activity_1rbcl6h**: Een handmatige taak waarbij het verenigingsdossier wordt geëvalueerd.
+- **Gateway_1jv3xum**: Een beslissingspunt dat controleert of alle informatie compleet is.
+  - Ja: Leidt naar **Activity_1alfwiw** voor het tellen van punten en verdelen van subsidiebedragen.
+  - Nee: Leidt naar **Activity_1r7w29n** voor het aanvullen van informatie.
+
+### Sub-proces 3: Afhandeling en Communicatie
+- **Activity_1sykbht**: Een handmatige taak voor verdere evaluatie en verdeling na het tellen van punten.
+- **Gateway_0t9ipo1**: Een beslissingspunt dat controleert of de evaluatie is goedgekeurd.
+  - Ja: Leidt naar **Activity_1px5vj5** voor het opmaken van de agenda voor het schepencollege.
+  - Nee: Terug naar **Activity_1rbcl6h** voor heroverweging.
+
+### Sub-proces 4: Goedkeuring en Uitbetaling
+- **Activity_06d7dwp**: Een handmatige taak voor de evaluatie en goedkeuring door een hogere instantie.
+- **Gateway_11etuxr**: Een beslissingspunt dat controleert of de subsidie is goedgekeurd.
+  - Ja: Leidt naar **Activity_1qzavjs** voor het doorgeven van toegekende bedragen aan de financiële dienst.
+  - Nee: Terug naar **Activity_1rbcl6h** voor heroverweging.
+
+### Sub-proces 5: Finale Communicatie en Afsluiting
+- **Activity_1qzavjs**: Een communicatietask voor het doorgeven van bedragen aan de financiële dienst.
+- **Activity_0hsdt5f**: Een communicatietask om de vereniging op de hoogte te brengen van de toegekende bedragen.
+- **Activity_180syoq**: Een gebruikerstaak voor het uitbetalen aan de vereniging.
+- **EndEvent_0m4unw9** en **EndEvent_0q0oqgm**: Eindgebeurtenissen die het proces afsluiten.
+
+Elk van deze sub-processen draagt bij aan een gestructureerde afhandeling van subsidieaanvragen binnen de organisatie, waarbij duidelijke beslissingspunten en taken zijn gedefinieerd om efficiëntie en transparantie te waarborgen.

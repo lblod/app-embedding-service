@@ -129,7 +129,7 @@ async def root():
     return {"message": "Welcome to our embedding service for semantic search over text and bpmn graphs."}
 
 #Handling tasks
-@app.post("/tasks/bpmn")
+@app.post("/tasks/bpmn", tags=["tasks"])
 async def create_task(file: UploadFile, request: Request):
     """
     Create a new task and add it to the task queue.
@@ -191,7 +191,7 @@ async def create_task(file: UploadFile, request: Request):
 
 
 # Handling tasks from raw text (testing)
-@app.post("/tasks/text")
+@app.post("/tasks/text", tags=["tasks"])
 async def create_task_from_text(task: TextTask, request: Request):
     """
     Create a new task from raw text and add it to the task queue.
@@ -230,7 +230,7 @@ async def create_task_from_text(task: TextTask, request: Request):
 
     return JSONResponse(content={"task": uuid})
 
-@app.get("/tasks/{task_uuid}")
+@app.get("/tasks/{task_uuid}", tags=["tasks-monitoring"])
 async def get_task(task_uuid: str, request: Request):
     """
     Get a task.
@@ -288,8 +288,8 @@ async def get_task(task_uuid: str, request: Request):
         "log": str(task["log"]["value"]),
     }
 
-@app.get("/tasks")
-async def get_tasks(status: BPMNTaskStatus, request: Request):
+@app.get("/tasks", tags=["tasks-monitoring"])
+async def get_tasks(request: Request, status: BPMNTaskStatus, limit: int = 1):
     """
     Get all tasks with a specified status.
 
@@ -319,6 +319,7 @@ async def get_tasks(status: BPMNTaskStatus, request: Request):
                     task:log ?log .
             }}
         }}
+        LIMIT {limit}
     """
 
     # Execute the SPARQL SELECT query
@@ -348,7 +349,7 @@ async def get_tasks(status: BPMNTaskStatus, request: Request):
 
 # Handling task results
 
-@app.post("/tasks/results")
+@app.post("/tasks/results", tags=["tasks"])
 async def store_task_results(request: Request, graph_dict: GraphDict, sparql_graph: Optional[str] = default_graph):
     """
     Endpoint for generating SPARQL INSERT queries from a dictionary.
@@ -371,7 +372,7 @@ async def store_task_results(request: Request, graph_dict: GraphDict, sparql_gra
 
 
 # Handling search
-@app.post("/encode", response_model=Embedding)
+@app.post("/encode", response_model=Embedding, tags=["embedding"])
 async def encode(text: str = Body(...)):
     """
     Encode a given text into an embedding.
@@ -387,7 +388,7 @@ async def encode(text: str = Body(...)):
     encoded_text = graphEmbedder.get_embedding_model().encode(text)
     return {"embedding": encoded_text.tolist()}
 
-@app.post("/search")
+@app.post("/search", tags=["search"])
 async def search(text: str = Body(...)):
     """
     Encode a given text into an embedding and perform a k-NN search in Elasticsearch.

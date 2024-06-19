@@ -9,7 +9,7 @@ from library.BPMNGraphEmbedder import BPMNGraphEmbedderKeras
 from library.BPMNQueue import BPMNQueue
 
 class BPMNWorkerManager:
-    def __init__(self, worker_count, queue_endpoint, graph_endpoint, sleep_time = 5, sentence_model='paraphrase-multilingual-MiniLM-L12-v2', graph_model='/app/models/bpmn_search_0.1.0/bpmn_search_embedding_model.h5'):
+    def __init__(self, worker_count, queue_endpoint, graph_endpoint, sleep_time = 5, sentence_model='paraphrase-multilingual-MiniLM-L12-v2', graph_model='/app/models/bpmn_search_0.1.0/bpmn_search_embedding_model.h5', **kwargs):
         self.worker_count = worker_count
         self.queue_endpoint = queue_endpoint
         self.graph_endpoint = graph_endpoint
@@ -18,7 +18,10 @@ class BPMNWorkerManager:
         self.sentence_model = sentence_model
         self.graph_model = graph_model
 
-        self.workers = [BPMNWorker(queue_endpoint, graph_endpoint, sleep_time, sentence_model, graph_model) for _ in range(worker_count)]
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+        self.workers = [BPMNWorker(queue_endpoint, graph_endpoint, sleep_time, sentence_model, graph_model, **kwargs) for _ in range(worker_count)]
 
     def start_workers(self):
         for worker in self.workers:
@@ -32,13 +35,16 @@ class BPMNWorkerManager:
         self.executor.shutdown(wait=True)
 
 class BPMNWorker:
-    def __init__(self, queue_endpoint, graph_endpoint, sleep_time, sentence_model = 'paraphrase-multilingual-MiniLM-L12-v2', graph_model = '/app/models/bbpmn_search_0.1.0/bpmn_search_embedding_model.h5'):
+    def __init__(self, queue_endpoint, graph_endpoint, sleep_time, sentence_model = 'paraphrase-multilingual-MiniLM-L12-v2', graph_model = '/app/models/bbpmn_search_0.1.0/bpmn_search_embedding_model.h5', **kwargs):
         self.queue_endpoint = queue_endpoint
         self.graph_endpoint = graph_endpoint
         self.queue = BPMNQueue.get_instance(queue_endpoint)
         self.graphEmbedder = BPMNGraphEmbedderKeras(sentence_model, graph_model)
         self.stop_event = threading.Event()  # Replace stop_flag with an Event
         self.sleep_time = sleep_time  # Add sleep time
+
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     def post_results(self, task, bpmn_graph):
         post_data = bpmn_graph.to_dict()

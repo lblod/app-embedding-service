@@ -1,0 +1,31 @@
+De BPMN-procesdiagram beschreven in het XML-bestand bevat verschillende subprocessen, verdeeld over meerdere banen (lanes). Hieronder volgt een gedetailleerde beschrijving van elk subprocess in het Nederlands, gericht op de volgorde van taken, beslissingspunten en belangrijke activiteiten en gebeurtenissen:
+
+### Subproces 1: Start en Communicatie Subsidieaanvraag
+- **StartEvent_020hdqw**: Het proces begint met een startevenement.
+- **Activity_1c3d5wv**: Een verzendtaak genaamd "Subsidieaanvraag communicatie naar vereniging" wordt uitgevoerd. Dit houdt in dat er communicatie plaatsvindt naar de vereniging over de subsidieaanvraag.
+
+### Subproces 2: Invullen Subsidies
+- **Activity_034qtmd**: Een gebruikerstaak "Invullen beleidssubsidie" waarbij beleidssubsidie formulieren worden ingevuld.
+- **Gateway_0thyowe**: Een exclusieve gateway "Werken met jeugd" die bepaalt of de volgende taak gericht is op jeugdwerk.
+- **Activity_033151x**: Als de gateway besluit dat het jeugdwerk betreft, wordt de gebruikerstaak "Invullen impulssubsidie" uitgevoerd.
+
+### Subproces 3: Evaluatie en Verdeling
+- **Activity_1rbcl6h**: Een handmatige taak "Evalueren vereniging dossier/subsidie" waarbij het dossier en de subsidie van de vereniging worden geëvalueerd.
+- **Activity_1alfwiw**: Een bedrijfsregeltaak "Telling punten en verdeling subsidiebedragen" waarbij punten worden geteld en subsidiebedragen worden verdeeld.
+- **Activity_1sykbht**: Een handmatige taak "Evalueren verdeling" waarbij de verdeling van subsidies wordt geëvalueerd.
+- **Gateway_0t9ipo1**: Een exclusieve gateway "Goedgekeurd?" die bepaalt of de verdeling is goedgekeurd.
+
+### Subproces 4: Communicatie en Uitbetaling
+- **Activity_1px5vj5**: Een verzendtaak "Verslag doorsturen naar sportverenigingen" waarbij een verslag naar sportverenigingen wordt gestuurd.
+- **Activity_1qzavjs**: Een verzendtaak "Doorgeven toegekende bedragen aan financiële dienst" waarbij toegekende bedragen aan de financiële dienst worden doorgegeven.
+- **Activity_180syoq**: Een gebruikerstaak "Uitbetaling aan vereniging" waarbij de uitbetaling aan de vereniging wordt gedaan.
+- **EndEvent_1lpxo1d**: Het proces eindigt met een eindgebeurtenis.
+
+### Subproces 5: Evaluatie en Goedkeuring
+- **Activity_06d7dwp**: Een handmatige taak "Evalueren verdeling en goedkeuren" waarbij de verdeling wordt geëvalueerd en goedgekeurd.
+- **Gateway_11etuxr**: Een exclusieve gateway "Goedgekeurd?" die bepaalt of de evaluatie en verdeling zijn goedgekeurd.
+
+### Subproces 6: Agenda en Gemeenteraad
+- **Task_0wfdyxr**: Een taak "Verdeling op agenda plaatsen van gemeenteraad" waarbij de verdeling op de agenda van de gemeenteraad wordt geplaatst.
+
+Deze subprocessen vormen samen een complex proces waarbij verschillende taken en beslissingen worden genomen om subsidies te beheren en te verdelen onder verenigingen, met evaluaties en goedkeuringen op verschillende niveaus.
