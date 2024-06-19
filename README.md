@@ -6,7 +6,7 @@ This repository is a [mu-project](https://github.com/mu-semtech/mu-project), it 
 
 ## What does it do?
 
-This project demonstrates how the search functionality of mu-search can be improved using Machine Learning (ML). In this project, the lexical search of mu-search is combined with semantic search to enable natural language queries (e.g., 'give me a BPMN about handling disputes'). The main focus of this project is on BPMN files, but it generalizes to any kind of data that can be represented as a graph (i.e., text, HTML, etc.). For instance, text is a set of sentences, paragraphs, or chapters (nodes) arranged in a specific order (edges).
+This project demonstrates how the search functionality of mu-search can be improved using Machine Learning (ML). In this project, the lexical search of mu-search is combined with semantic search to enable natural language queries (e.g., 'give me a BPMN about handling disputes'). The main focus of this project is on BPMN files, but **it generalizes to any kind of data** that can be represented as a graph (i.e., text, HTML, etc.). For instance, text is a set of sentences, paragraphs, or chapters (nodes) arranged in a specific order (edges).
 
 
 The service implemented in this project functions by creating embeddings of the provided data (BPMN files, text, etc.). Embeddings are a type of representation that convert data into numerical vectors, capturing the inherent relationships and features within the data. Each dimension in an embedding vector corresponds to a particular feature or attribute, and the values indicate the presence and intensity of these features.  
@@ -112,13 +112,13 @@ For search, the service itself initializes a `library.BPMNGraphEmbedder` instanc
 
 ### Working with Text vs BPMN Files
 
-The model is designed to work primarily with BPMN diagrams; however, it can easily be extended to work with any kind of text documents as well. This is because any kind of text can be converted to a graph by splitting it into nodes based on sentences, paragraphs, HTML tags, etc. (see `library.chunking`, `library.BPMNGraphEmbedder.TextEmbedder`). Using `library.BPMNGraph` and the `process_txt` and `process_text` functions, a TXT file or raw text can be processed into a BPMNGraph object that, in turn, can be processed identically to a BPMN file using the `library.BPMNGraphEmbedder.BPMNGraphEmbedder` or `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras`.
+The model is designed to work primarily with BPMN diagrams; however, it can easily be extended to work with any kind of text documents as well. This is because any kind of text can be converted to a graph by splitting it into nodes based on sentences, paragraphs, HTML tags, etc. (see `library.chunking`, `library.BPMNGraphEmbedder.TextEmbedder`). Using `library.BPMNGraph` and the `process_txt` and `process_text` functions, a TXT file or raw text can be processed into a BPMNGraph object that, in turn, can be processed identically to a BPMN file using the `library.BPMNGraphEmbedder.BPMNGraphEmbedder` or `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras`.**`library.BPMNGraph` automatically detects the data type based on the extension and defaults to `text`. No additional steps are required to get a baseline working. Simple create tasks using POST \tasks\text with the text data.**
 
 However, it is important to note that:
 
 * The default embedding model `paraphrase-multilingual-MiniLM-L12-v2` is not ideal for text (this can be set using the environment variable `SENTENCE_EMBEDDING_MODEL`). Better results can be achieved using `textgain/tags-allnli-GroNLP-bert-base-dutch-cased`.
 * The custom Keras models used in `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras` are designed to work with `paraphrase-multilingual-MiniLM-L12-v2` embeddings of size 384 and are explicitly trained on matching BPMN files with search queries. They have not been tested on different data. Further fine-tuning on text-query pairs should be done if you want to use the custom models for text. Otherwise, stick to the average embeddings (stored under `BPMNGraph.get_graph()["embedding_average"]` when using `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras`) or the embeddings of `library.BPMNGraphEmbedder.BPMNGraphEmbedder`.
-* When using the model for text search together with `textgain/tags-allnli-GroNLP-bert-base-dutch-cased` or any other sentence-transformer model from [Hugging Face](https://huggingface.co), you will need to change the `dims` parameter in mu-search accordingly (e.g., 768 for BERT-based models).
+* **When using the model for text search together with `textgain/tags-allnli-GroNLP-bert-base-dutch-cased` or any other sentence-transformer model from [Hugging Face](https://huggingface.co), you will need to change the `dims` parameter in mu-search accordingly** (e.g., 768 for BERT-based models).
 * Fine-tuning is always advised for the best results.
 
 # finetuning of search and similarity models
@@ -214,7 +214,15 @@ BPMNGraph objects can be generated by the `library.BPMNGraph` class by passing t
 
 The remaining steps are largely identical to the previous section on the search model. An example of how to design one for the compare model can be seen in `model_training/compare_spektral.ipynb`. Once the Spektral dataset has been created, a data loader can be implemented to efficiently feed the data into the model during training. This involves creating a Spektral `Loader` that handles batching and shuffling of the dataset. The model can then be trained and tested using typical Keras methods such as `fit` and `evaluate`. The `fit` method is used to train the model on the training dataset, while the `evaluate` method assesses the model's performance on the testing dataset. By leveraging these standard Keras functionalities, the process of training and testing the GCN model with Spektral becomes straightforward and consistent with other deep learning workflows, enabling effective model development and evaluation.
 
-## Overview of services
+# Future steps: what should be done next?
+  * **Start gathering information:** Gather BPMN files, user queries, and other relevant data as training can only be done with enough data.
+  * Requirements: It's important to have a large enough dataset of BPMN files with enough variety to train the embeddings and validate the model. For example, if all the data is about the same process (handling of disputes), the model will not be able to generalize to other processes. It's hard to quantify how much data is needed, but a few hundred BPMN files should be a good start.
+    * Train our own text embeddings for the nodes and edges using a model such as RoBERTa trained on BPMN files ([svercoutere/robbert-2023-dutch-base-abb](https://huggingface.co/svercoutere/robbert-2023-dutch-base-abb)).
+    * Validate the current Spektral model using the new data.
+    * Change the architecture of the GNN or GCN model if needed (possibly add more layers, change the activation functions, etc.).
+    * Merge the two models: There is a lot of overlap between the two models, so it might be possible to merge them into a single model and use the graph embeddings for both tasks.
+
+# Overview of services
 
 - [mu-identifier](https://github.com/mu-semtech/mu-identifier)
 - [mu-dispatcher](https://github.com/mu-semtech/mu-dispatcher)
