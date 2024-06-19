@@ -201,11 +201,11 @@ For the training of the Spektral model, the model expects a `spektral.data.Datas
 
 ```json
 {
-    "query": BPMNGraph,
-    "target": BPMNGraph,
-    "score": float [0.0-1.0],
-    "query_class": str,
-    "target_class": str
+    "query": "BPMNGraph",
+    "target": "BPMNGraph",
+    "score": "float [0.0-1.0]",
+    "query_class": "str",
+    "target_class": "str"
 }
 ```
 
