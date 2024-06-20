@@ -2,8 +2,6 @@
  
 Backend for creating embeddings for BPMN files and text, leveraging advanced machine learning techniques to enhance search capabilities. Built on the mu.semte.ch microservices stack, this service combines lexical and semantic search to provide more accurate and meaningful search results.
 
-This repository is a [mu-project](https://github.com/mu-semtech/mu-project), it includes the minimal set of services required to run the openproceshuis.
-
 ## What does it do?
 
 This project demonstrates how the search functionality of mu-search can be improved using Machine Learning (ML). In this project, the lexical search of mu-search is combined with semantic search to enable natural language queries (e.g., 'give me a BPMN about handling disputes'). The main focus of this project is on BPMN files, but **it generalizes to any kind of data** that can be represented as a graph (i.e., text, HTML, etc.). For instance, text is a set of sentences, paragraphs, or chapters (nodes) arranged in a specific order (edges).
