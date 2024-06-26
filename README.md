@@ -116,7 +116,7 @@ However, it is important to note that:
 
 * The default embedding model `paraphrase-multilingual-MiniLM-L12-v2` is not ideal for text (this can be set using the environment variable `SENTENCE_EMBEDDING_MODEL`). Better results can be achieved using `textgain/tags-allnli-GroNLP-bert-base-dutch-cased`.
 * The custom Keras models used in `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras` are designed to work with `paraphrase-multilingual-MiniLM-L12-v2` embeddings of size 384 and are explicitly trained on matching BPMN files with search queries. They have not been tested on different data. Further fine-tuning on text-query pairs should be done if you want to use the custom models for text. Otherwise, stick to the average embeddings (stored under `BPMNGraph.get_graph()["embedding_average"]` when using `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras`) or the embeddings of `library.BPMNGraphEmbedder.BPMNGraphEmbedder`.
-* **When using the model for text search together with `textgain/tags-allnli-GroNLP-bert-base-dutch-cased` or any other sentence-transformer model from [Hugging Face](https://huggingface.co), you will need to change the `dims` parameter in mu-search accordingly** (e.g., 768 for BERT-based models).
+* **When using the model for text search together with `textgain/tags-allnli-GroNLP-bert-base-dutch-cased` or any other sentence-transformer model from [Hugging Face](https://huggingface.co), you will need to change the `dims` parameter in mu-search accordingly** (e.g., 768 for BERT-based models).[text](../../gnn-citations/compare_spektral.ipynb)
 * Fine-tuning is always advised for the best results.
 
 # finetuning of search and similarity models
