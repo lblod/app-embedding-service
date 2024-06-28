@@ -112,11 +112,16 @@ For search, the service itself initializes a `library.BPMNGraphEmbedder` instanc
 
 The model is designed to work primarily with BPMN diagrams; however, it can easily be extended to work with any kind of text documents as well. This is because any kind of text can be converted to a graph by splitting it into nodes based on sentences, paragraphs, HTML tags, etc. (see `library.chunking`, `library.BPMNGraphEmbedder.TextEmbedder`). Using `library.BPMNGraph` and the `process_txt` and `process_text` functions, a TXT file or raw text can be processed into a BPMNGraph object that, in turn, can be processed identically to a BPMN file using the `library.BPMNGraphEmbedder.BPMNGraphEmbedder` or `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras`.**`library.BPMNGraph` automatically detects the data type based on the extension and defaults to `text`. No additional steps are required to get a baseline working. Simple create tasks using POST \tasks\text with the text data.**
 
+
+
+A branch with the minimal necessary changes on how to use it with text (agendapunten) is shown in [branch/lokaal-beslist](https://github.com/lblod/app-embedding-service/tree/lokaal-beslist).
+
+
 However, it is important to note that:
 
 * The default embedding model `paraphrase-multilingual-MiniLM-L12-v2` is not ideal for text (this can be set using the environment variable `SENTENCE_EMBEDDING_MODEL`). Better results can be achieved using `textgain/tags-allnli-GroNLP-bert-base-dutch-cased`.
 * The custom Keras models used in `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras` are designed to work with `paraphrase-multilingual-MiniLM-L12-v2` embeddings of size 384 and are explicitly trained on matching BPMN files with search queries. They have not been tested on different data. Further fine-tuning on text-query pairs should be done if you want to use the custom models for text. Otherwise, stick to the average embeddings (stored under `BPMNGraph.get_graph()["embedding_average"]` when using `library.BPMNGraphEmbedder.BPMNGraphEmbedderKeras`) or the embeddings of `library.BPMNGraphEmbedder.BPMNGraphEmbedder`.
-* **When using the model for text search together with `textgain/tags-allnli-GroNLP-bert-base-dutch-cased` or any other sentence-transformer model from [Hugging Face](https://huggingface.co), you will need to change the `dims` parameter in mu-search accordingly** (e.g., 768 for BERT-based models).[text](../../gnn-citations/compare_spektral.ipynb)
+* **When using the model for text search together with `textgain/tags-allnli-GroNLP-bert-base-dutch-cased` or any other sentence-transformer model from [Hugging Face](https://huggingface.co), you will need to change the `dims` parameter in mu-search accordingly** (e.g., 768 for BERT-based models).
 * Fine-tuning is always advised for the best results.
 
 # finetuning of search and similarity models

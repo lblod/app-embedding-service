@@ -5,7 +5,7 @@ import os
 # Third party imports
 from sentence_transformers import SentenceTransformer, util
 from fastapi import FastAPI, UploadFile, HTTPException, File, Request, Body
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, HTMLResponse
 from werkzeug.utils import secure_filename
 from pydantic import BaseModel
 from typing import List, Optional
@@ -124,10 +124,20 @@ async def restart_workers():
     worker_manager.start_workers()
     return {"message": "Workers restarted successfully"}
 
-@app.get("/")
-async def root():
-    return {"message": "Welcome to our embedding service for semantic search over text and bpmn graphs."}
-
+@app.get("/", response_class=HTMLResponse)
+async def read_root():
+    html_content = """
+    <html>
+        <head>
+            <title>FastAPI Home</title>
+        </head>
+        <body>
+            <h1>Welcome to our embedding service for semantic search over text and bpmn graphs</h1>
+            <p>For API documentation, visit <a href="/docs">/docs</a></p>
+        </body>
+    </html>
+    """
+    return HTMLResponse(content=html_content)
 #Handling tasks
 @app.post("/tasks/bpmn", tags=["tasks"])
 async def create_task(file: UploadFile, request: Request):
