@@ -5,7 +5,7 @@ import threading
 import concurrent.futures
 from library.BPMNTask import BPMNTask, BPMNTaskStatus
 from library.BPMNGraph import BPMNGraph
-from library.BPMNGraphEmbedder import BPMNGraphEmbedderKeras
+from library.BPMNGraphEmbedder import BPMNGraphEmbedder
 from library.BPMNQueue import BPMNQueue
 
 class BPMNWorkerManager:
@@ -39,7 +39,7 @@ class BPMNWorker:
         self.queue_endpoint = queue_endpoint
         self.graph_endpoint = graph_endpoint
         self.queue = BPMNQueue.get_instance(queue_endpoint)
-        self.graphEmbedder = BPMNGraphEmbedderKeras(sentence_model, graph_model)
+        self.graphEmbedder = BPMNGraphEmbedder(sentence_model)
         self.stop_event = threading.Event()  # Replace stop_flag with an Event
         self.sleep_time = sleep_time  # Add sleep time
 

@@ -19,7 +19,7 @@ from escape_helpers import sparql_escape_string, sparql_escape_uri
 from library.BPMNSearch import BPMNSearch
 from library.BPMNTask import BPMNTaskStatus
 from library.BPMNWorker import BPMNWorkerManager
-from library.BPMNGraphEmbedder import BPMNGraphEmbedderKeras
+from library.BPMNGraphEmbedder import BPMNGraphEmbedder
 
 
 default_graph = os.getenv('DEFAULT_GRAPH', "http://mu.semte.ch/graphs/public")
@@ -33,7 +33,7 @@ accepted_file_extensions = ['.bpmn', '.txt']
 
 # Initialize the graphEmbedder
 print(f"Initializing the graphEmbedder with sentence model: {sentence_model} and graph model: {embedding_model}")
-graphEmbedder = BPMNGraphEmbedderKeras(sentence_model=sentence_model, graph_model = embedding_model)
+graphEmbedder = BPMNGraphEmbedder(sentence_model)
 
 # Initialize the graphSearch
 graphSearch = BPMNSearch("http://search")

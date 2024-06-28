@@ -15,8 +15,7 @@ services:
       MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://triplestore:8890/sparql"
       MU_QUEUE_GRAPH: "http://mu.semte.ch/graphs/tasks"
-      SENTENSE_EMBEDDING_MODEL: "paraphrase-multilingual-MiniLM-L12-v2" #use "textgain/tags-allnli-GroNLP-bert-base-dutch-cased" if you want to embed texts in Dutch with BPMNGraphEmbedder instead of BPMNGraphEmbedderKeras and in search config set dims to 768
-      EMBEDDING_MODEL : "/app/models/bpmn_search_0.1.0/bpmn_search_embedding_model.h5" # this graph embedding model is trained with embeddings generate from "paraphrase-multilingual-MiniLM-L12-v2" model. Unexpected results may occur if you use other sentence-transformers.
+      SENTENSE_EMBEDDING_MODEL: "textgain/tags-allnli-GroNLP-bert-base-dutch-cased"
     volumes:
       - ./source:/app/
 
